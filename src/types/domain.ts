@@ -6,6 +6,7 @@
 export type UserType = 'individual' | 'agent' | 'partner' | 'enterprise';
 export type UserStatus = 'active' | 'suspended' | 'pending_verification' | 'banned';
 export type KycStatus = 'none' | 'pending' | 'verified' | 'rejected';
+export type AdminRole = 'super_admin' | 'admin' | 'support';
 
 export interface User {
   id: string;
@@ -16,6 +17,7 @@ export interface User {
   kycStatus: KycStatus;
   referralCode: string | null;
   referredBy: string | null;
+  adminRole: AdminRole | null;
   metadata: Record<string, any>;
   createdAt: string;
   updatedAt: string;
@@ -149,8 +151,32 @@ export interface Partner {
   totalEarnings: number;
   totalPaid: number;
   pendingEarnings: number;
+  downlineCount: number;
+  monthlyVolume: number;
   status: PartnerStatus;
   whiteLabelConfig: Record<string, any>;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface PartnerTreeNode {
+  partner: Partner;
+  user: { name: string; email: string; status: UserStatus };
+  children: PartnerTreeNode[];
+  level: number;
+  totalCommission: number;
+  customerCount: number;
+}
+
+export interface CommissionRule {
+  id: string;
+  name: string;
+  tierLevel: number;
+  baseRate: number;
+  minVolume: number;
+  maxVolume: number | null;
+  bonusRate: number;
+  isActive: boolean;
   createdAt: string;
   updatedAt: string;
 }

@@ -12,6 +12,12 @@ import {
   Cpu,
   ScrollText,
   Settings,
+  Network,
+  Key,
+  DollarSign,
+  Shield,
+  TrendingUp,
+  Server,
 } from 'lucide-react';
 
 // Dashboard navigation items
@@ -167,4 +173,200 @@ export const rateLimitTiers = {
   free: { rpm: 20, tpm: 40_000, label: 'Free' },
   standard: { rpm: 60, tpm: 150_000, label: 'Standard' },
   enterprise: { rpm: 600, tpm: 2_000_000, label: 'Enterprise' },
+};
+
+// Partner Panel navigation items
+export const partnerNavItems: NavItem[] = [
+  {
+    id: 'overview',
+    label: 'Overview',
+    i18nKey: 'partner.overview',
+    icon: LayoutDashboard,
+    path: '/partner/overview',
+    group: 'main',
+  },
+  {
+    id: 'downline',
+    label: 'Downline',
+    i18nKey: 'partner.downline',
+    icon: Network,
+    path: '/partner/downline',
+    group: 'network',
+  },
+  {
+    id: 'commissions',
+    label: 'Commissions',
+    i18nKey: 'partner.commissions',
+    icon: DollarSign,
+    path: '/partner/commissions',
+    group: 'finance',
+  },
+  {
+    id: 'api-keys',
+    label: 'API Keys',
+    i18nKey: 'partner.apiKeys',
+    icon: Key,
+    path: '/partner/api-keys',
+    group: 'tools',
+  },
+  {
+    id: 'pricing',
+    label: 'Pricing',
+    i18nKey: 'partner.pricing',
+    icon: TrendingUp,
+    path: '/partner/pricing',
+    group: 'tools',
+  },
+  {
+    id: 'customers',
+    label: 'Customers',
+    i18nKey: 'partner.customers',
+    icon: Users,
+    path: '/partner/customers',
+    group: 'network',
+  },
+  {
+    id: 'wallet',
+    label: 'Wallet',
+    i18nKey: 'partner.wallet',
+    icon: Wallet,
+    path: '/partner/wallet',
+    group: 'finance',
+  },
+  {
+    id: 'ledger',
+    label: 'Ledger',
+    i18nKey: 'partner.ledger',
+    icon: BookOpen,
+    path: '/partner/ledger',
+    group: 'finance',
+  },
+  {
+    id: 'analytics',
+    label: 'Analytics',
+    i18nKey: 'partner.analytics',
+    icon: BarChart3,
+    path: '/partner/analytics',
+    group: 'monitor',
+  },
+  {
+    id: 'settings',
+    label: 'Settings',
+    i18nKey: 'partner.settings',
+    icon: Settings,
+    path: '/partner/settings',
+    group: 'system',
+  },
+];
+
+// Admin Console navigation items
+export const adminNavItems: NavItem[] = [
+  {
+    id: 'overview',
+    label: 'Overview',
+    i18nKey: 'admin.overview',
+    icon: LayoutDashboard,
+    path: '/admin/overview',
+    group: 'main',
+  },
+  {
+    id: 'partners',
+    label: 'Partners',
+    i18nKey: 'admin.partners',
+    icon: Network,
+    path: '/admin/partners',
+    group: 'network',
+  },
+  {
+    id: 'users',
+    label: 'Users',
+    i18nKey: 'admin.users',
+    icon: Users,
+    path: '/admin/users',
+    group: 'network',
+  },
+  {
+    id: 'providers',
+    label: 'Providers',
+    i18nKey: 'admin.providers',
+    icon: Server,
+    path: '/admin/providers',
+    group: 'market',
+  },
+  {
+    id: 'models',
+    label: 'Models',
+    i18nKey: 'admin.models',
+    icon: Cpu,
+    path: '/admin/models',
+    group: 'market',
+  },
+  {
+    id: 'ledger',
+    label: 'Ledger',
+    i18nKey: 'admin.ledger',
+    icon: BookOpen,
+    path: '/admin/ledger',
+    group: 'finance',
+  },
+  {
+    id: 'commissions',
+    label: 'Commissions',
+    i18nKey: 'admin.commissions',
+    icon: DollarSign,
+    path: '/admin/commissions',
+    group: 'finance',
+  },
+  {
+    id: 'fraud',
+    label: 'Fraud',
+    i18nKey: 'admin.fraud',
+    icon: Shield,
+    path: '/admin/fraud',
+    group: 'monitor',
+  },
+  {
+    id: 'analytics',
+    label: 'Analytics',
+    i18nKey: 'admin.analytics',
+    icon: BarChart3,
+    path: '/admin/analytics',
+    group: 'monitor',
+  },
+  {
+    id: 'logs',
+    label: 'Logs',
+    i18nKey: 'admin.logs',
+    icon: ScrollText,
+    path: '/admin/logs',
+    group: 'monitor',
+  },
+  {
+    id: 'settings',
+    label: 'Settings',
+    i18nKey: 'admin.settings',
+    icon: Settings,
+    path: '/admin/settings',
+    group: 'system',
+  },
+];
+
+// Partner Panel group labels
+export const partnerGroupLabels: Record<string, string> = {
+  main: 'Main',
+  network: 'Network',
+  finance: 'Finance',
+  tools: 'Tools',
+  monitor: 'Monitor',
+  system: 'System',
+};
+
+// Admin Console group labels
+export const adminGroupLabels: Record<string, string> = {
+  main: 'Main',
+  network: 'Network',
+  market: 'Market',
+  finance: 'Finance',
+  monitor: 'Monitor',
+  system: 'System',
 };

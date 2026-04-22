@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
 import {
   Zap, Cpu, Wallet, ArrowRight, ChevronRight, CheckCircle2,
   TrendingUp, Shield, Globe, Code2, Bot, Activity, Clock,
   DollarSign, User, Users, Menu, X, Sparkles,
 } from 'lucide-react'
 
-function LandingPage() {
-  const navigate = useNavigate()
+function StandaloneLanding() {
   const [scrollY, setScrollY] = useState(0)
   const [activeFlowStep, setActiveFlowStep] = useState(0)
   const [hoveredModel, setHoveredModel] = useState<string | null>(null)
@@ -35,10 +33,10 @@ function LandingPage() {
   ]
 
   const agents = [
-    { name: 'Code Agent', desc: 'Code generation & review', price: '$0.02/exec', success: '98.5%', time: '3.2s', users: '12.4k' },
-    { name: 'Research Agent', desc: 'Deep research & analysis', price: '$0.05/task', success: '96.8%', time: '45s', users: '8.7k' },
-    { name: 'Marketing Agent', desc: 'Content & campaign creation', price: '$0.03/task', success: '97.2%', time: '12s', users: '6.3k' },
-    { name: 'Data Agent', desc: 'ETL & data pipeline', price: '$0.04/job', success: '99.1%', time: '8s', users: '5.1k' },
+    { name: 'Code Agent', desc: 'Code generation & review', price: '$0.02/exec', success: '98.5%', time: '3.2s' },
+    { name: 'Research Agent', desc: 'Deep research & analysis', price: '$0.05/task', success: '96.8%', time: '45s' },
+    { name: 'Marketing Agent', desc: 'Content & campaign creation', price: '$0.03/task', success: '97.2%', time: '12s' },
+    { name: 'Data Agent', desc: 'ETL & data pipeline', price: '$0.04/job', success: '99.1%', time: '8s' },
   ]
 
   const flowSteps = [
@@ -52,13 +50,11 @@ function LandingPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#05070B] text-[#EDEDED] overflow-hidden">
+    <div className="min-h-screen bg-[#05070B] text-[#EDEDED]">
       {/* Background grid */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.03]">
         <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
       </div>
-
-      {/* Glow orbs */}
       <div className="fixed top-0 left-1/4 w-96 h-96 bg-[#7C5CFF]/10 rounded-full blur-[128px] pointer-events-none" />
       <div className="fixed bottom-0 right-1/4 w-96 h-96 bg-[#00D4FF]/10 rounded-full blur-[128px] pointer-events-none" />
 
@@ -72,26 +68,23 @@ function LandingPage() {
           <a href="#models" className="hover:text-white transition-colors">Models</a>
           <a href="#agents" className="hover:text-white transition-colors">Agents</a>
           <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
-          <a href="#docs" className="hover:text-white transition-colors">Docs</a>
         </div>
         <div className="hidden md:flex gap-3">
-          <button onClick={() => navigate('/login')} className="px-4 py-2 text-sm text-white/70 hover:text-white transition-colors">Login</button>
-          <button onClick={() => navigate('/register')} className="px-5 py-2 text-sm bg-white text-[#05070B] rounded-md font-medium hover:bg-white/90 transition-all">Get Started</button>
+          <button className="px-4 py-2 text-sm text-white/70 hover:text-white transition-colors">Login</button>
+          <button className="px-5 py-2 text-sm bg-white text-[#05070B] rounded-md font-medium hover:bg-white/90 transition-all">Get Started</button>
         </div>
         <button className="md:hidden p-2 text-white/70 hover:text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </nav>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-[#05070B]/95 backdrop-blur-xl md:hidden pt-20 px-6">
           <div className="flex flex-col gap-6 text-lg">
             <a href="#models" className="text-white/70 hover:text-white py-3 border-b border-white/10" onClick={() => setMobileMenuOpen(false)}>Models</a>
             <a href="#agents" className="text-white/70 hover:text-white py-3 border-b border-white/10" onClick={() => setMobileMenuOpen(false)}>Agents</a>
             <a href="#pricing" className="text-white/70 hover:text-white py-3 border-b border-white/10" onClick={() => setMobileMenuOpen(false)}>Pricing</a>
-            <button onClick={() => { navigate('/login'); setMobileMenuOpen(false) }} className="text-left text-white/70 hover:text-white py-3 border-b border-white/10">Login</button>
-            <button onClick={() => { navigate('/register'); setMobileMenuOpen(false) }} className="mt-4 px-6 py-3 bg-white text-[#05070B] rounded-lg font-medium">Get Started</button>
+            <button className="mt-4 px-6 py-3 bg-white text-[#05070B] rounded-lg font-medium" onClick={() => setMobileMenuOpen(false)}>Get Started</button>
           </div>
         </div>
       )}
@@ -121,14 +114,14 @@ function LandingPage() {
             <button className="px-6 py-2.5 border border-white/10 rounded-md text-sm text-white/70 hover:text-white hover:border-white/20 transition-all flex items-center gap-2"><Bot className="h-4 w-4" /> Explore Agents</button>
           </div>
 
-          {/* 3-Panel Product Mockup */}
+          {/* 3-Panel Mockup */}
           <div className="mt-20 grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
             <div className="p-5 rounded-xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-sm">
               <div className="flex items-center gap-2 mb-4"><div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" /><span className="text-xs text-white/40 font-mono">Model Router</span></div>
               <div className="space-y-2">
                 <div className="flex justify-between items-center py-2 px-3 rounded-lg bg-white/[0.04]"><span className="text-xs">GPT-4.1</span><span className="text-xs text-emerald-400 font-mono">12ms</span></div>
                 <div className="flex justify-between items-center py-2 px-3 rounded-lg bg-white/[0.04]"><span className="text-xs">Claude 3</span><span className="text-xs text-emerald-400 font-mono">18ms</span></div>
-                <div className="flex justify-between items-center py-2 px-3 rounded-lg bg-white/[0.04]"><span className="text-xs">Gemini Ultra</span><span className="text-xs text-amber-400 font-mono">45ms</span></div>
+                <div className="flex justify-between items-center py-2 px-3 rounded-lg bg-white/[0.04]"><span className="text-xs">Gemini</span><span className="text-xs text-amber-400 font-mono">45ms</span></div>
               </div>
               <div className="mt-4 pt-3 border-t border-white/[0.06]"><p className="text-xs text-white/30">Auto-routing by cost & latency</p></div>
             </div>
@@ -201,7 +194,7 @@ function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <p className="text-center text-xs text-white/30 uppercase tracking-widest mb-10">Trusted by AI teams building with</p>
           <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 opacity-40">
-            {['OpenAI', 'Anthropic', 'Google', 'Meta', 'Mistral', 'DeepSeek', 'Cohere', 'Groq'].map((brand) => (<div key={brand} className="text-sm font-semibold tracking-wider text-white/60 hover:text-white/80 transition-colors cursor-default">{brand}</div>))}
+            {['OpenAI', 'Anthropic', 'Google', 'Meta', 'Mistral', 'DeepSeek', 'Cohere', 'Groq'].map((brand) => (<div key={brand} className="text-sm font-semibold tracking-wider text-white/60">{brand}</div>))}
           </div>
         </div>
       </section>
@@ -252,12 +245,12 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* MODELS SECTION */}
+      {/* MODELS */}
       <section id="models" className="py-24 px-8 lg:px-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-end justify-between mb-10">
             <div><p className="text-sm text-white/40 uppercase tracking-wider mb-2">Model Marketplace</p><h2 className="text-2xl font-semibold">Unified Model Access</h2></div>
-            <button className="text-sm text-[#7C5CFF] hover:text-[#7C5CFF]/80 transition-colors flex items-center gap-1">View all models <ChevronRight className="h-4 w-4" /></button>
+            <button className="text-sm text-[#7C5CFF] hover:text-[#7C5CFF]/80 transition-colors flex items-center gap-1">View all <ChevronRight className="h-4 w-4" /></button>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {models.map((model) => (
@@ -281,7 +274,7 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* AGENTS SECTION */}
+      {/* AGENTS */}
       <section id="agents" className="py-24 px-8 lg:px-16">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-end justify-between mb-10">
@@ -305,7 +298,7 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* PARTNER / DISTRIBUTION SECTION */}
+      {/* PARTNER NETWORK */}
       <section className="py-24 px-8 lg:px-16">
         <div className="max-w-4xl mx-auto">
           <div className="relative p-10 lg:p-16 rounded-3xl border border-white/[0.06] bg-gradient-to-br from-[#7C5CFF]/5 via-transparent to-[#00D4FF]/5 overflow-hidden">
@@ -339,7 +332,7 @@ function LandingPage() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm text-white/40 uppercase tracking-wider mb-2">Pricing</p>
           <h2 className="text-2xl font-semibold mb-4">Transparent Pricing</h2>
-          <p className="text-white/50 max-w-xl mx-auto mb-12">Pay only for what you use. No subscriptions, no hidden fees. Unified rate card across all models and agents.</p>
+          <p className="text-white/50 max-w-xl mx-auto mb-12">Pay only for what you use. No subscriptions, no hidden fees.</p>
           <div className="grid md:grid-cols-3 gap-4 text-left">
             {[
               { tier: 'Free', price: '$0', tokens: '1M tokens/mo', features: ['Community models', 'Basic routing', 'Email support'] },
@@ -366,7 +359,7 @@ function LandingPage() {
           <h2 className="text-3xl lg:text-4xl font-semibold mb-4">Start building with TokenSpark</h2>
           <p className="text-white/50 text-lg mb-8">One API key. Every model. Every agent.</p>
           <div className="flex justify-center gap-4">
-            <button onClick={() => navigate('/register')} className="px-8 py-3.5 bg-white text-[#05070B] rounded-lg font-medium hover:bg-white/90 transition-all">Get Started Free</button>
+            <button className="px-8 py-3.5 bg-white text-[#05070B] rounded-lg font-medium hover:bg-white/90 transition-all">Get Started Free</button>
             <button className="px-8 py-3.5 border border-white/10 rounded-lg text-sm text-white/70 hover:text-white hover:border-white/20 transition-all">Read Docs</button>
           </div>
         </div>
@@ -376,10 +369,10 @@ function LandingPage() {
       <footer className="border-t border-white/[0.06] py-12 px-8 lg:px-16">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
-            <div><p className="text-sm font-medium mb-4">Product</p><ul className="space-y-2 text-xs text-white/40"><li><a href="#" className="hover:text-white/60 transition-colors">Models</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Agents</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Pricing</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Changelog</a></li></ul></div>
-            <div><p className="text-sm font-medium mb-4">Resources</p><ul className="space-y-2 text-xs text-white/40"><li><a href="#" className="hover:text-white/60 transition-colors">API Docs</a></li><li><a href="#" className="hover:text-white/60 transition-colors">SDKs</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Guides</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Blog</a></li></ul></div>
-            <div><p className="text-sm font-medium mb-4">Company</p><ul className="space-y-2 text-xs text-white/40"><li><a href="#" className="hover:text-white/60 transition-colors">About</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Careers</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Partners</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Contact</a></li></ul></div>
-            <div><p className="text-sm font-medium mb-4">Legal</p><ul className="space-y-2 text-xs text-white/40"><li><a href="#" className="hover:text-white/60 transition-colors">Privacy</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Terms</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Security</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Status</a></li></ul></div>
+            <div><p className="text-sm font-medium mb-4">Product</p><ul className="space-y-2 text-xs text-white/40"><li>Models</li><li>Agents</li><li>Pricing</li><li>Changelog</li></ul></div>
+            <div><p className="text-sm font-medium mb-4">Resources</p><ul className="space-y-2 text-xs text-white/40"><li>API Docs</li><li>SDKs</li><li>Guides</li><li>Blog</li></ul></div>
+            <div><p className="text-sm font-medium mb-4">Company</p><ul className="space-y-2 text-xs text-white/40"><li>About</li><li>Careers</li><li>Partners</li><li>Contact</li></ul></div>
+            <div><p className="text-sm font-medium mb-4">Legal</p><ul className="space-y-2 text-xs text-white/40"><li>Privacy</li><li>Terms</li><li>Security</li><li>Status</li></ul></div>
           </div>
           <div className="border-t border-white/[0.06] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-[#7C5CFF]" /><span className="text-sm font-medium">TokenSpark</span></div>
@@ -391,4 +384,4 @@ function LandingPage() {
   )
 }
 
-export default LandingPage
+export default StandaloneLanding

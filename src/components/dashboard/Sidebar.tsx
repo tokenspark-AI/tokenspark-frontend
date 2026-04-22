@@ -13,13 +13,21 @@ import {
   ScrollText,
   Settings,
   Sparkles,
+  Network,
+  Key,
+  DollarSign,
+  Shield,
+  TrendingUp,
+  Server,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { dashboardNavItems } from '@/lib/constants';
+import type { NavItem } from '@/types/dashboard';
 import { useUIStore } from '@/stores/ui-store';
 
 interface SidebarProps {
   collapsed?: boolean;
+  navItems?: NavItem[];
+  groupLabels?: Record<string, string>;
 }
 
 const iconMap: Record<string, React.ElementType> = {
@@ -35,18 +43,25 @@ const iconMap: Record<string, React.ElementType> = {
   Cpu,
   ScrollText,
   Settings,
+  Network,
+  Key,
+  DollarSign,
+  Shield,
+  TrendingUp,
+  Server,
 };
 
-const groupLabels: Record<string, string> = {
+const defaultGroupLabels: Record<string, string> = {
   main: 'Main',
   market: 'Market',
   finance: 'Finance',
   network: 'Network',
   monitor: 'Monitor',
   system: 'System',
+  tools: 'Tools',
 };
 
-export function Sidebar({ collapsed = false }: SidebarProps) {
+export function Sidebar({ collapsed = false, navItems = [], groupLabels }: SidebarProps) {
   const location = useLocation();
   const navigate = useNavigate();
   const { closeSidebar } = useUIStore();
@@ -56,8 +71,10 @@ export function Sidebar({ collapsed = false }: SidebarProps) {
     closeSidebar();
   };
 
+  const labels = groupLabels || defaultGroupLabels;
+
   // Group nav items
-  const grouped = dashboardNavItems.reduce<Record<string, typeof dashboardNavItems>>((acc, item) => {
+  const grouped = navItems.reduce<Record<string, typeof navItems>>((acc, item) => {
     const group = item.group || 'main';
     if (!acc[group]) acc[group] = [];
     acc[group].push(item);
@@ -82,7 +99,7 @@ export function Sidebar({ collapsed = false }: SidebarProps) {
           <div key={groupKey} className="mb-4">
             {!collapsed && (
               <div className="px-4 mb-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                {groupLabels[groupKey] || groupKey}
+                {labels[groupKey] || groupKey}
               </div>
             )}
             {items.map((item) => {

@@ -9,11 +9,30 @@ interface AuthState {
   token: string | null;
   isAuthenticated: boolean;
   isLoading: boolean;
+  userDashboardType: 'user' | 'partner' | 'admin';
+  hasPermission: (permission: string) => boolean;
   login: (email: string, password: string) => Promise<void>;
   register: (email: string, password: string, name: string) => Promise<void>;
   googleLogin: (idToken: string) => Promise<void>;
   logout: () => void;
   refreshProfile: () => Promise<void>;
+}
+
+function getUserDashboardType(user: User | null): 'user' | 'partner' | 'admin' {
+  if (!user) return 'user';
+  if (user.adminRole) return 'admin';
+  if (user.userType === 'agent' || user.userType === 'partner' || user.userType === 'enterprise') return 'partner';
+  return 'user';
+}
+
+function checkPermission(user: User | null, permission: string): boolean {
+  if (!user) return false;
+  if (user.adminRole === 'super_admin') return true;
+  if (user.adminRole === 'admin' && !permission.startsWith('admin:super')) return true;
+  if (user.userType === 'agent' || user.userType === 'partner' || user.userType === 'enterprise') {
+    return permission.startsWith('partner:');
+  }
+  return permission.startsWith('user:');
 }
 
 // Mock user for development when backend is not available
@@ -26,6 +45,7 @@ const mockUser: User = {
   kycStatus: 'verified',
   referralCode: 'DEMO2026',
   referredBy: null,
+  adminRole: null,
   metadata: {},
   createdAt: '2026-01-01T00:00:00Z',
   updatedAt: '2026-01-01T00:00:00Z',
@@ -34,7 +54,14 @@ const mockUser: User = {
 function setAuthState(user: User, token: string) {
   localStorage.setItem('tokenspark_token', token);
   localStorage.setItem('tokenspark_user', JSON.stringify(user));
-  return { user, token, isAuthenticated: true, isLoading: false };
+  return {
+    user,
+    token,
+    isAuthenticated: true,
+    isLoading: false,
+    userDashboardType: getUserDashboardType(user),
+    hasPermission: (permission: string) => checkPermission(user, permission),
+  };
 }
 
 function mockAuthState() {
@@ -44,11 +71,13 @@ function mockAuthState() {
 
 export const useAuthStore = create<AuthState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       user: null,
       token: null,
       isAuthenticated: false,
       isLoading: false,
+      userDashboardType: 'user',
+      hasPermission: () => false,
 
       login: async (email: string, password: string) => {
         set({ isLoading: true });
@@ -101,7 +130,7 @@ export const useAuthStore = create<AuthState>()(
       logout: () => {
         localStorage.removeItem('tokenspark_token');
         localStorage.removeItem('tokenspark_user');
-        set({ user: null, token: null, isAuthenticated: false });
+        set({ user: null, token: null, isAuthenticated: false, userDashboardType: 'user', hasPermission: () => false });
       },
 
       refreshProfile: async () => {

@@ -3,7 +3,11 @@ import LandingPage from './pages/LandingPage'
 import { LoginPage } from './components/auth/LoginPage'
 import { RegisterPage } from './components/auth/RegisterPage'
 import { AuthGuard, PublicRoute } from './components/auth/AuthGuard'
+import { PartnerGuard } from './components/auth/PartnerGuard'
+import { AdminGuard } from './components/auth/AdminGuard'
 import { DashboardLayout } from './components/dashboard/DashboardLayout'
+import { PartnerLayout } from './components/dashboard/PartnerLayout'
+import { AdminLayout } from './components/dashboard/AdminLayout'
 import { OverviewPage } from './pages/dashboard/OverviewPage'
 import { ConsolePage } from './pages/dashboard/ConsolePage'
 import { AgentsPage } from './pages/dashboard/AgentsPage'
@@ -16,6 +20,19 @@ import { PartnersPage } from './pages/dashboard/PartnersPage'
 import { ModelsPage } from './pages/dashboard/ModelsPage'
 import { LogsPage } from './pages/dashboard/LogsPage'
 import { SettingsPage } from './pages/dashboard/SettingsPage'
+// Partner Panel pages
+import { PartnerOverviewPage } from './pages/partner/PartnerOverviewPage'
+import { DownlinePage } from './pages/partner/DownlinePage'
+import { CommissionsPage as PartnerCommissionsPage } from './pages/partner/CommissionsPage'
+import { PricingPage } from './pages/partner/PricingPage'
+import { CustomersPage } from './pages/partner/CustomersPage'
+// Admin Console pages
+import { AdminOverviewPage } from './pages/admin/AdminOverviewPage'
+import { AdminPartnersPage } from './pages/admin/PartnersPage'
+import { UsersPage } from './pages/admin/UsersPage'
+import { AdminCommissionsPage } from './pages/admin/CommissionsPage'
+import { FraudPage } from './pages/admin/FraudPage'
+import { AnalyticsPage } from './pages/admin/AnalyticsPage'
 
 function App() {
   return (
@@ -62,6 +79,55 @@ function App() {
               </Routes>
             </DashboardLayout>
           </AuthGuard>
+        }
+      />
+
+      {/* Partner Panel routes */}
+      <Route
+        path="/partner"
+        element={
+          <PartnerGuard>
+            <PartnerLayout>
+              <Routes>
+                <Route index element={<PartnerOverviewPage />} />
+                <Route path="overview" element={<PartnerOverviewPage />} />
+                <Route path="downline" element={<DownlinePage />} />
+                <Route path="commissions" element={<PartnerCommissionsPage />} />
+                <Route path="api-keys" element={<WalletPage />} />
+                <Route path="pricing" element={<PricingPage />} />
+                <Route path="customers" element={<CustomersPage />} />
+                <Route path="wallet" element={<WalletPage />} />
+                <Route path="ledger" element={<LedgerPage />} />
+                <Route path="analytics" element={<UsagePage />} />
+                <Route path="settings" element={<SettingsPage />} />
+              </Routes>
+            </PartnerLayout>
+          </PartnerGuard>
+        }
+      />
+
+      {/* Admin Console routes */}
+      <Route
+        path="/admin"
+        element={
+          <AdminGuard>
+            <AdminLayout>
+              <Routes>
+                <Route index element={<AdminOverviewPage />} />
+                <Route path="overview" element={<AdminOverviewPage />} />
+                <Route path="partners" element={<AdminPartnersPage />} />
+                <Route path="users" element={<UsersPage />} />
+                <Route path="providers" element={<ModelsPage />} />
+                <Route path="models" element={<ModelsPage />} />
+                <Route path="ledger" element={<LedgerPage />} />
+                <Route path="commissions" element={<AdminCommissionsPage />} />
+                <Route path="fraud" element={<FraudPage />} />
+                <Route path="analytics" element={<AnalyticsPage />} />
+                <Route path="logs" element={<LogsPage />} />
+                <Route path="settings" element={<SettingsPage />} />
+              </Routes>
+            </AdminLayout>
+          </AdminGuard>
         }
       />
     </Routes>
