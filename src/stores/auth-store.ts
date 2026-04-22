@@ -111,19 +111,57 @@ export const useAuthStore = create<AuthState>()(
       googleLogin: async (idToken: string) => {
         set({ isLoading: true });
         try {
+          // Try to decode the Google ID token to get user info
+          // ID token is a JWT with payload: { sub, email, name, picture, exp, iat }
+          const base64Url = idToken.split('.')[1];
+          const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+          const jsonPayload = decodeURIComponent(
+            atob(base64)
+              .split('')
+              .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+              .join('')
+          );
+          const googlePayload = JSON.parse(jsonPayload);
+
+          // Attempt to send to backend for verification
           const response = await apiClient.post(endpoints.auth.google.url, {
             idToken,
           });
           const { token, user } = response.data;
           set(setAuthState(user, token));
         } catch {
-          // Mock Google login for development
-          const googleUser = {
-            ...mockUser,
-            email: 'user@gmail.com',
-            name: 'Google User',
-          };
-          set(setAuthState(googleUser, 'mock-google-token-' + Date.now()));
+          // Backend not available - create user from Google ID token payload
+          // This is a fallback for development when backend is not running
+          try {
+            const base64Url = idToken.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            const jsonPayload = decodeURIComponent(
+              atob(base64)
+                .split('')
+                .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+                .join('')
+            );
+            const googlePayload = JSON.parse(jsonPayload);
+
+            const googleUser: User = {
+              ...mockUser,
+              id: 'google-' + googlePayload.sub,
+              email: googlePayload.email,
+              name: googlePayload.name || googlePayload.email.split('@')[0],
+              userType: 'individual',
+              status: 'active',
+              kycStatus: 'pending',
+            };
+            set(setAuthState(googleUser, 'google-token-' + googlePayload.sub + '-' + Date.now()));
+          } catch (decodeError) {
+            // If token decoding fails, use mock user
+            const googleUser = {
+              ...mockUser,
+              email: 'user@gmail.com',
+              name: 'Google User',
+            };
+            set(setAuthState(googleUser, 'mock-google-token-' + Date.now()));
+          }
         }
       },
 

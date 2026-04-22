@@ -66,7 +66,7 @@ function LandingPage() {
       <nav className="relative z-50 flex justify-between items-center px-6 lg:px-12 py-4 border-b border-white/[0.06] backdrop-blur-xl bg-[#05070B]/70 sticky top-0">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center"><Zap className="h-4 w-4 text-white" /></div>
-          <span className="text-lg font-semibold tracking-tight">TOKENSPARK</span>
+          <span className="text-lg font-semibold tracking-tight">词元闪耀</span>
         </div>
         <div className="hidden md:flex gap-8 text-sm text-white/50">
           <a href="#models" className="hover:text-white transition-colors">Models</a>
@@ -363,11 +363,63 @@ function LandingPage() {
       {/* CTA */}
       <section className="py-24 px-8 lg:px-16">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl lg:text-4xl font-semibold mb-4">Start building with TokenSpark</h2>
-          <p className="text-white/50 text-lg mb-8">One API key. Every model. Every agent.</p>
+          <h2 className="text-3xl lg:text-4xl font-semibold mb-4">开始使用词元闪耀</h2>
+          <p className="text-white/50 text-lg mb-8">一个 API 密钥，所有模型，所有智能体。</p>
           <div className="flex justify-center gap-4">
-            <button onClick={() => navigate('/register')} className="px-8 py-3.5 bg-white text-[#05070B] rounded-lg font-medium hover:bg-white/90 transition-all">Get Started Free</button>
-            <button className="px-8 py-3.5 border border-white/10 rounded-lg text-sm text-white/70 hover:text-white hover:border-white/20 transition-all">Read Docs</button>
+            <button onClick={() => navigate('/register')} className="px-8 py-3.5 bg-white text-[#05070B] rounded-lg font-medium hover:bg-white/90 transition-all">免费开始</button>
+            <button className="px-8 py-3.5 border border-white/10 rounded-lg text-sm text-white/70 hover:text-white hover:border-white/20 transition-all">阅读文档</button>
+          </div>
+        </div>
+      </section>
+
+      {/* PARTNER APPLY MODULE - Footer Section */}
+      <section className="py-16 px-8 lg:px-16 border-t border-white/[0.06]">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative p-10 lg:p-14 rounded-2xl border border-[#7C5CFF]/20 bg-gradient-to-br from-[#7C5CFF]/5 via-transparent to-[#00D4FF]/5">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#7C5CFF]/10 rounded-full blur-[100px]" />
+            <div className="relative">
+              <div className="flex items-center gap-2 mb-4"><Globe className="h-5 w-5 text-[#7C5CFF]" /><p className="text-sm text-[#7C5CFF]/70 uppercase tracking-wider">合作伙伴计划</p></div>
+              <h2 className="text-2xl lg:text-3xl font-semibold mb-3">成为 Partner（代理计划）</h2>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#7C5CFF]/30 bg-[#7C5CFF]/10 text-sm text-[#7C5CFF] mb-6">
+                <span className="font-semibold">$10</span> 一次性激活费
+              </div>
+              <p className="text-white/50 text-sm mb-8">适合开发者、工作室、AI 应用团队，将 AI 能力变现。</p>
+
+              <div className="grid sm:grid-cols-2 gap-8 mb-8">
+                <div>
+                  <h3 className="text-sm font-semibold mb-3 text-white/80 flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-400" />你将获得</h3>
+                  <ul className="space-y-2 text-sm text-white/50">
+                    <li className="flex items-start gap-2"><span className="text-[#7C5CFF] mt-0.5">•</span>Reseller API 权限</li>
+                    <li className="flex items-start gap-2"><span className="text-[#7C5CFF] mt-0.5">•</span>独立控制台（Partner Dashboard）</li>
+                    <li className="flex items-start gap-2"><span className="text-[#7C5CFF] mt-0.5">•</span>自定义 API 加价能力（Markup）</li>
+                    <li className="flex items-start gap-2"><span className="text-[#7C5CFF] mt-0.5">•</span>可创建下级代理（可选）</li>
+                    <li className="flex items-start gap-2"><span className="text-[#7C5CFF] mt-0.5">•</span>实时收益统计</li>
+                    <li className="flex items-start gap-2"><span className="text-[#7C5CFF] mt-0.5">•</span>利润分账系统</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold mb-3 text-white/80 flex items-center gap-2"><TrendingUp className="h-4 w-4 text-[#00D4FF]" />收益模式</h3>
+                  <ul className="space-y-2 text-sm text-white/50">
+                    <li className="flex items-start gap-2"><span className="text-[#00D4FF] mt-0.5">•</span>以平台成本价采购 Token</li>
+                    <li className="flex items-start gap-2"><span className="text-[#00D4FF] mt-0.5">•</span>自行定价对外销售</li>
+                    <li className="flex items-start gap-2"><span className="text-[#00D4FF] mt-0.5">•</span>赚取中间差价</li>
+                    <li className="flex items-start gap-2"><span className="text-[#00D4FF] mt-0.5">•</span>下级使用可获得分成</li>
+                  </ul>
+                  <div className="mt-4 p-3 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+                    <p className="text-xs text-white/40 mb-2 font-medium">示例：</p>
+                    <div className="space-y-1 text-xs font-mono">
+                      <div className="flex justify-between"><span className="text-white/40">平台成本</span><span>$1 / 100万 tokens</span></div>
+                      <div className="flex justify-between"><span className="text-white/40">你的售价</span><span className="text-[#00D4FF]">$2.5 / 100万 tokens</span></div>
+                      <div className="flex justify-between border-t border-white/[0.06] pt-1"><span className="text-white/60">利润</span><span className="text-emerald-400 font-semibold">$1.5 / 100万 tokens</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button className="w-full sm:w-auto px-8 py-3.5 bg-[#7C5CFF] rounded-lg font-medium hover:bg-[#7C5CFF]/90 transition-all hover:shadow-[0_0_20px_rgba(124,92,255,0.3)] flex items-center justify-center gap-2">
+                立即申请 Partner 权限 <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -376,14 +428,14 @@ function LandingPage() {
       <footer className="border-t border-white/[0.06] py-12 px-8 lg:px-16">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
-            <div><p className="text-sm font-medium mb-4">Product</p><ul className="space-y-2 text-xs text-white/40"><li><a href="#" className="hover:text-white/60 transition-colors">Models</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Agents</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Pricing</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Changelog</a></li></ul></div>
-            <div><p className="text-sm font-medium mb-4">Resources</p><ul className="space-y-2 text-xs text-white/40"><li><a href="#" className="hover:text-white/60 transition-colors">API Docs</a></li><li><a href="#" className="hover:text-white/60 transition-colors">SDKs</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Guides</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Blog</a></li></ul></div>
-            <div><p className="text-sm font-medium mb-4">Company</p><ul className="space-y-2 text-xs text-white/40"><li><a href="#" className="hover:text-white/60 transition-colors">About</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Careers</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Partners</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Contact</a></li></ul></div>
-            <div><p className="text-sm font-medium mb-4">Legal</p><ul className="space-y-2 text-xs text-white/40"><li><a href="#" className="hover:text-white/60 transition-colors">Privacy</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Terms</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Security</a></li><li><a href="#" className="hover:text-white/60 transition-colors">Status</a></li></ul></div>
+            <div><p className="text-sm font-medium mb-4">产品</p><ul className="space-y-2 text-xs text-white/40"><li><a href="#" className="hover:text-white/60 transition-colors">模型市场</a></li><li><a href="#" className="hover:text-white/60 transition-colors">智能体</a></li><li><a href="#" className="hover:text-white/60 transition-colors">定价</a></li><li><a href="#" className="hover:text-white/60 transition-colors">更新日志</a></li></ul></div>
+            <div><p className="text-sm font-medium mb-4">资源</p><ul className="space-y-2 text-xs text-white/40"><li><a href="#" className="hover:text-white/60 transition-colors">API 文档</a></li><li><a href="#" className="hover:text-white/60 transition-colors">SDK</a></li><li><a href="#" className="hover:text-white/60 transition-colors">指南</a></li><li><a href="#" className="hover:text-white/60 transition-colors">博客</a></li></ul></div>
+            <div><p className="text-sm font-medium mb-4">公司</p><ul className="space-y-2 text-xs text-white/40"><li><a href="#" className="hover:text-white/60 transition-colors">关于我们</a></li><li><a href="#" className="hover:text-white/60 transition-colors">招聘</a></li><li><a href="#" className="hover:text-white/60 transition-colors">合作伙伴</a></li><li><a href="#" className="hover:text-white/60 transition-colors">联系我们</a></li></ul></div>
+            <div><p className="text-sm font-medium mb-4">法律</p><ul className="space-y-2 text-xs text-white/40"><li><a href="#" className="hover:text-white/60 transition-colors">隐私政策</a></li><li><a href="#" className="hover:text-white/60 transition-colors">服务条款</a></li><li><a href="#" className="hover:text-white/60 transition-colors">安全</a></li><li><a href="#" className="hover:text-white/60 transition-colors">服务状态</a></li></ul></div>
           </div>
           <div className="border-t border-white/[0.06] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-[#7C5CFF]" /><span className="text-sm font-medium">TokenSpark</span></div>
-            <p className="text-xs text-white/30">© 2026 TokenSpark. All rights reserved.</p>
+            <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-[#7C5CFF]" /><span className="text-sm font-medium">词元闪耀</span></div>
+            <p className="text-xs text-white/30">© 2026 词元闪耀. All rights reserved.</p>
           </div>
         </div>
       </footer>

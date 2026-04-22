@@ -8,8 +8,6 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     body { font-family: 'Inter', sans-serif; }
-    .lang-dropdown { display: none; }
-    .lang-dropdown.show { display: block; }
   </style>
 </head>
 <body class="min-h-screen bg-[#05070B] text-[#EDEDED]">
@@ -25,26 +23,16 @@
       <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center">
         <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
       </div>
-      <span class="text-lg font-semibold tracking-tight" data-i18n="brand">TOKENSPARK</span>
+      <span class="text-lg font-semibold tracking-tight">TOKENSPARK</span>
     </div>
     <div class="hidden md:flex gap-8 text-sm text-white/50">
-      <a href="#models" class="hover:text-white transition-colors" data-i18n="nav.models">Models</a>
-      <a href="#agents" class="hover:text-white transition-colors" data-i18n="nav.agents">Agents</a>
-      <a href="#pricing" class="hover:text-white transition-colors" data-i18n="nav.pricing">Pricing</a>
+      <a href="#models" class="hover:text-white transition-colors">Models</a>
+      <a href="#agents" class="hover:text-white transition-colors">Agents</a>
+      <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
     </div>
-    <div class="hidden md:flex gap-3 items-center">
-      <!-- Language Switcher -->
-      <div class="relative">
-        <button id="langBtn" class="px-3 py-2 text-sm text-white/70 hover:text-white transition-colors flex items-center gap-1">
-          <span id="currentLang">🌐 EN</span>
-          <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </button>
-        <div id="langDropdown" class="lang-dropdown absolute right-0 top-full mt-2 w-48 bg-[#0a0c14] border border-white/10 rounded-lg shadow-xl max-h-80 overflow-y-auto z-50">
-          <div class="p-2 grid gap-0.5" id="langList"></div>
-        </div>
-      </div>
-      <button class="px-4 py-2 text-sm text-white/70 hover:text-white transition-colors" data-i18n="nav.login">Login</button>
-      <button class="px-5 py-2 text-sm bg-white text-[#05070B] rounded-md font-medium hover:bg-white/90 transition-all" data-i18n="nav.getStarted">Get Started</button>
+    <div class="hidden md:flex gap-3">
+      <button class="px-4 py-2 text-sm text-white/70 hover:text-white transition-colors">Login</button>
+      <button class="px-5 py-2 text-sm bg-white text-[#05070B] rounded-md font-medium hover:bg-white/90 transition-all">Get Started</button>
     </div>
   </nav>
 
@@ -318,163 +306,5 @@
       </div>
     </div>
   </footer>
-
-  <!-- Multi-language Support Script -->
-  <script>
-    // 30 Language translations
-    const translations = {
-      en: {
-        brand: "TOKENSPARK",
-        "nav.models": "Models",
-        "nav.agents": "Agents",
-        "nav.pricing": "Pricing",
-        "nav.login": "Login",
-        "nav.getStarted": "Get Started",
-        "hero.badge": "AI Infrastructure",
-        "pricing.title": "Transparent Pricing",
-        "cta.title": "Start building with TokenSpark",
-        "cta.button": "Get Started Free",
-        "footer.copyright": "© 2026 TokenSpark. All rights reserved."
-      },
-      zh: {
-        brand: "词元闪耀",
-        "nav.models": "模型",
-        "nav.agents": "智能体",
-        "nav.pricing": "定价",
-        "nav.login": "登录",
-        "nav.getStarted": "开始使用",
-        "hero.badge": "AI 基础设施",
-        "pricing.title": "透明定价",
-        "cta.title": "开始使用词元闪耀构建",
-        "cta.button": "免费开始",
-        "footer.copyright": "© 2026 词元闪耀。保留所有权利。"
-      },
-      ja: {
-        brand: "TOKENSPARK",
-        "nav.models": "モデル",
-        "nav.agents": "エージェント",
-        "nav.pricing": "料金",
-        "nav.login": "ログイン",
-        "nav.getStarted": "始める",
-        "hero.badge": "AIインフラ",
-        "pricing.title": "透明な料金体系",
-        "cta.title": "TOKENSPARKで構築を始めよう",
-        "cta.button": "無料で始める",
-        "footer.copyright": "© 2026 TokenSpark. All rights reserved."
-      },
-      ko: {
-        brand: "TOKENSPARK",
-        "nav.models": "모델",
-        "nav.agents": "에이전트",
-        "nav.pricing": "요금",
-        "nav.login": "로그인",
-        "nav.getStarted": "시작하기",
-        "hero.badge": "AI 인프라",
-        "pricing.title": "투명한 요금제",
-        "cta.title": "TokenSpark로 시작하세요",
-        "cta.button": "무료로 시작",
-        "footer.copyright": "© 2026 TokenSpark. All rights reserved."
-      },
-      fr: {
-        brand: "TOKENSPARK",
-        "nav.models": "Modèles",
-        "nav.agents": "Agents",
-        "nav.pricing": "Tarifs",
-        "nav.login": "Connexion",
-        "nav.getStarted": "Commencer",
-        "hero.badge": "Infrastructure IA",
-        "pricing.title": "Tarification transparente",
-        "cta.title": "Commencez à construire avec TokenSpark",
-        "cta.button": "Commencer gratuitement",
-        "footer.copyright": "© 2026 TokenSpark. Tous droits réservés."
-      },
-      de: {
-        brand: "TOKENSPARK",
-        "nav.models": "Modelle",
-        "nav.agents": "Agenten",
-        "nav.pricing": "Preise",
-        "nav.login": "Anmelden",
-        "nav.getStarted": "Loslegen",
-        "hero.badge": "KI-Infrastruktur",
-        "pricing.title": "Transparente Preisgestaltung",
-        "cta.title": "Beginnen Sie mit TokenSpark",
-        "cta.button": "Kostenlos starten",
-        "footer.copyright": "© 2026 TokenSpark. Alle Rechte vorbehalten."
-      },
-      es: {
-        brand: "TOKENSPARK",
-        "nav.models": "Modelos",
-        "nav.agents": "Agentes",
-        "nav.pricing": "Precios",
-        "nav.login": "Iniciar sesión",
-        "nav.getStarted": "Comenzar",
-        "hero.badge": "Infraestructura IA",
-        "pricing.title": "Precios transparentes",
-        "cta.title": "Comienza a construir con TokenSpark",
-        "cta.button": "Comenzar gratis",
-        "footer.copyright": "© 2026 TokenSpark. Todos los derechos reservados."
-      }
-    };
-
-    // Language list (30 languages)
-    const languages = [
-      { code: 'zh', name: '简体中文', flag: '🇨🇳' },
-      { code: 'en', name: 'English', flag: '🇺🇸' },
-      { code: 'ja', name: '日本語', flag: '🇯🇵' },
-      { code: 'ko', name: '한국어', flag: '🇰🇷' },
-      { code: 'fr', name: 'Français', flag: '🇫🇷' },
-      { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-      { code: 'es', name: 'Español', flag: '🇪🇸' },
-      { code: 'it', name: 'Italiano', flag: '🇮🇹' },
-      { code: 'pt', name: 'Português', flag: '🇵🇹' },
-      { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-      { code: 'ar', name: 'العربية', flag: '🇸🇦' },
-      { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' },
-      { code: 'th', name: 'ไทย', flag: '🇹🇭' },
-      { code: 'vi', name: 'Tiếng Việt', flag: '🇻🇳' },
-      { code: 'id', name: 'Bahasa Indonesia', flag: '🇮🇩' },
-      { code: 'tr', name: 'Türkçe', flag: '🇹🇷' },
-      { code: 'pl', name: 'Polski', flag: '🇵🇱' },
-      { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
-      { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
-      { code: 'zh-TW', name: '繁體中文', flag: '🇭🇰' }
-    ];
-
-    let currentLang = localStorage.getItem('tokenspark_lang') || 'en';
-
-    const langList = document.getElementById('langList');
-    languages.forEach(lang => {
-      const btn = document.createElement('button');
-      btn.className = 'w-full text-left px-3 py-2 text-sm hover:bg-white/10 rounded transition-colors flex items-center gap-2';
-      btn.textContent = `${lang.flag} ${lang.name}`;
-      btn.onclick = () => setLanguage(lang.code);
-      langList.appendChild(btn);
-    });
-
-    document.getElementById('langBtn').onclick = (e) => {
-      e.stopPropagation();
-      document.getElementById('langDropdown').classList.toggle('show');
-    };
-
-    document.addEventListener('click', () => {
-      document.getElementById('langDropdown').classList.remove('show');
-    });
-
-    function setLanguage(lang) {
-      currentLang = lang;
-      localStorage.setItem('tokenspark_lang', lang);
-      const langInfo = languages.find(l => l.code === lang);
-      document.getElementById('currentLang').textContent = `${langInfo.flag} ${langInfo.code.toUpperCase()}`;
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        const trans = translations[lang]?.[key] || translations['en']?.[key] || key;
-        el.textContent = trans;
-      });
-      document.documentElement.lang = lang;
-      document.getElementById('langDropdown').classList.remove('show');
-    }
-
-    setLanguage(currentLang);
-  </script>
 </body>
 </html>
