@@ -1,0 +1,90 @@
+version: '3.8'
+
+services:
+  # PostgreSQL — Primary Database
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: tokenspark
+      POSTGRES_PASSWORD: tokenspark
+      POSTGRES_DB: tokenspark
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./shared/db/migrations:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tokenspark"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Redis — Caching & Rate Limiting
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --requirepass tokenspark
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "tokenspark", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # TokenSpark API Gateway
+  tokenspark-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    environment:
+      DATABASE_URL: postgresql://tokenspark:tokenspark@postgres:5432/tokenspark
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: tokenspark
+      ENCRYPTION_SECRET: tokenspark-master-key-change-in-production
+      ENCRYPTION_SALT: tokenspark-salt-change-in-production
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  # TokenSpark Ledger Service
+  tokenspark-ledger:
+    build:
+      context: .
+      dockerfile: Dockerfile.ledger
+    environment:
+      DATABASE_URL: postgresql://tokenspark:tokenspark@postgres:5432/tokenspark
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: tokenspark
+      LEDGER_PORT: 3002
+    ports:
+      - "3002:3002"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  # Admin Dashboard (React Frontend)
+  tokenspark-dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.dashboard
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_API_URL: http://localhost:3000
+    depends_on:
+      - tokenspark-api
+
+volumes:
+  pgdata:
+  redisdata:

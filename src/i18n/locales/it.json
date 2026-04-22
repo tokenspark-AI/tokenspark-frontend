@@ -1,0 +1,207 @@
+{
+  "brand": {
+    "name": "词元闪耀",
+    "tagline": "AI Economy OS",
+    "subtitle": "Unified Model & Agent Marketplace, Shared Financial Layer"
+  },
+  "nav": {
+    "platform": "Platform",
+    "pricing": "Pricing",
+    "docs": "Docs",
+    "partners": "Partners",
+    "getStarted": "Get Started",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "hero": {
+    "badgeModel": "Model Marketplace",
+    "badgeAgent": "Agent Marketplace",
+    "title1": "AI Models & Agents,",
+    "title2": "One Economy.",
+    "subtitle": "A single platform integrating Model API and Agent task markets, with shared wallet, billing, double-entry ledger, and settlement — the unified infrastructure for the AI economy.",
+    "placeholder": "Try: gpt-4.1 / claude-3-opus / search Agent",
+    "run": "Run",
+    "learnMore": "Learn More"
+  },
+  "coreProducts": {
+    "title": "Dual-Engine Architecture",
+    "subtitle": "One economic system, two trading forms, unified financial layer.",
+    "modelMarket": {
+      "title": "Model Marketplace",
+      "desc": "GPT / Claude / Gemini / Mistral / Llama aggregation. Unified API, token billing, SDK — one integration, infinite models."
+    },
+    "agentMarket": {
+      "title": "Agent Marketplace",
+      "desc": "Agents as service providers, calling each other. Auto-match optimal agents, execute tasks, and charge."
+    },
+    "billing": {
+      "title": "Unified Financial Layer",
+      "desc": "Wallet system, pricing engine, double-entry ledger, usage metering and settlement. Every transaction has debit and credit, tracking every token and task."
+    },
+    "distribution": {
+      "title": "Distribution Network",
+      "desc": "Multi-level partners, white-label SaaS, enterprise billing network. Scale your AI business globally."
+    }
+  },
+  "agentSpark": {
+    "badge": "Execution Core",
+    "title": "AgentSpark — Execution Engine",
+    "subtitle": "The execution core of 词元闪耀. Responsible for model routing, agent execution, and runtime orchestration.",
+    "runtime": {
+      "title": "Execution Runtime",
+      "desc": "Run AI tasks, tool calls, and agent workflows. Scalable compute for any workload."
+    },
+    "routing": {
+      "title": "Routing Engine",
+      "desc": "Route requests to the best model or agent based on cost, latency, and capability matching."
+    },
+    "fallback": {
+      "title": "Fallback Management",
+      "desc": "Automatically switch to backup providers when primary routes fail. Zero downtime."
+    },
+    "monitoring": {
+      "title": "Performance Monitoring",
+      "desc": "Real-time latency tracking, error rates, and cost optimization analytics."
+    }
+  },
+  "systemFlow": {
+    "title": "System Flow",
+    "subtitle": "From request to settlement — the complete lifecycle through 词元闪耀.",
+    "steps": [
+      {
+        "title": "User or Agent sends request",
+        "desc": "Request arrives at 词元闪耀 unified endpoint with model or task preference"
+      },
+      {
+        "title": "Smart matching & routing",
+        "desc": "Routing engine selects optimal model or agent based on cost, latency, and capability"
+      },
+      {
+        "title": "词元闪耀 computes price",
+        "desc": "Real-time pricing engine calculates cost based on model, tokens, or task type"
+      },
+      {
+        "title": "Wallet balance frozen",
+        "desc": "Estimated cost reserved from user wallet for transaction security"
+      },
+      {
+        "title": "Execution engine runs",
+        "desc": "Request routed to selected model or agent, inference or task executed"
+      },
+      {
+        "title": "Response returned",
+        "desc": "Generated response streamed back via 词元闪耀"
+      },
+      {
+        "title": "Double-entry & settlement",
+        "desc": "Record debit/credit, calculate actual usage, settle service providers"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Unified Pricing —",
+    "titleAccent": "One Rate Card",
+    "subtitle": "Transparent pricing for all models and agents. Pay per token or task, no hidden fees.",
+    "input": "Input",
+    "output": "Output",
+    "context": "Context",
+    "perMillion": "/ 1M",
+    "popular": "Most Popular",
+    "getStarted": "Get Started",
+    "categories": {
+      "flagship": "Flagship Models",
+      "standard": "Standard Models",
+      "economy": "Economy Models",
+      "open": "Open Source"
+    }
+  },
+  "distribution": {
+    "title": "Partner",
+    "titleAccent": "Distribution Network",
+    "subtitle": "Channel distribution network for AI compute and agent capabilities. Consumption-driven commissions.",
+    "level1": {
+      "title": "Level 1 Partner",
+      "desc": "Onboard users, create sub-channels, distribute API keys, white-label capabilities.",
+      "commission": "Commission: 10% ~ 20% of user consumption"
+    },
+    "level2": {
+      "title": "Level 2 Partner",
+      "desc": "Can only onboard users. Cannot create sub-tiers. Uses parent API resource pool.",
+      "commission": "Commission: 3% ~ 8% of user consumption"
+    },
+    "enterprise": {
+      "title": "Enterprise Client",
+      "desc": "Fixed discount pricing, API bulk purchase, monthly billing.",
+      "commission": "Customized business plan"
+    },
+    "flow": {
+      "title": "Fund Flow",
+      "steps": [
+        "User tops up",
+        "Ledger freeze",
+        "Auto-split"
+      ]
+    },
+    "features": {
+      "commission": {
+        "title": "Consumption-Driven",
+        "desc": "Commission = actual token consumption × rate. No referral-only bonuses."
+      },
+      "ledger": {
+        "title": "Double-Entry Ledger",
+        "desc": "All commissions go through ledger, no manual balance changes. Every transaction traceable."
+      },
+      "settlement": {
+        "title": "Auto Settlement",
+        "desc": "Stripe / WeChat / Alipay / USDT auto-split, T+0 / T+1 settlement."
+      }
+    },
+    "becomePartner": "Become a Partner",
+    "learnMore": "Learn More"
+  },
+  "footer": {
+    "product": "Product",
+    "company": "Company",
+    "resources": "Resources",
+    "legal": "Legal",
+    "api": "API",
+    "changelog": "Changelog",
+    "about": "About",
+    "blog": "Blog",
+    "careers": "Careers",
+    "press": "Press",
+    "community": "Community",
+    "helpCenter": "Help Center",
+    "status": "Status",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "security": "Security",
+    "cookies": "Cookies",
+    "copyright": "© 2026 词元闪耀. All rights reserved."
+  },
+  "wallet": {
+    "balance": "Balance",
+    "available": "Available",
+    "reserved": "Reserved",
+    "topup": "Top Up",
+    "transactions": "Transactions",
+    "history": "History"
+  },
+  "errors": {
+    "insufficientFunds": "Insufficient funds",
+    "rateLimitExceeded": "Rate limit exceeded",
+    "invalidApiKey": "Invalid API key",
+    "providerError": "Provider error",
+    "modelNotFound": "Model not found"
+  },
+  "language": {
+    "zh": "Cinese",
+    "en": "Inglese",
+    "it": "Italiano",
+    "ja": "Giapponese",
+    "ko": "Coreano",
+    "ru": "Russo"
+  }
+}

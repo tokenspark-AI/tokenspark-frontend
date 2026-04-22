@@ -1,0 +1,585 @@
+import { useState, useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
+import {
+  Zap,
+  Cpu,
+  Wallet,
+  ArrowRight,
+  ChevronRight,
+  CheckCircle2,
+  TrendingUp,
+  Shield,
+  Globe,
+  Code2,
+  Bot,
+  BarChart3,
+  Play,
+  Sparkles,
+  Activity,
+  Clock,
+  DollarSign,
+  ArrowDown,
+  User,
+} from 'lucide-react'
+
+function TokenSparkHome() {
+  const navigate = useNavigate()
+  const [scrollY, setScrollY] = useState(0)
+  const [activeFlowStep, setActiveFlowStep] = useState(0)
+  const [hoveredModel, setHoveredModel] = useState<string | null>(null)
+  const [demoInput, setDemoInput] = useState('claude-3-opus')
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Auto-advance flow animation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveFlowStep((prev) => (prev + 1) % 7)
+    }, 2000)
+    return () => clearInterval(interval)
+  }, [])
+
+  const models = [
+    { name: 'GPT-4.1', input: '$12', output: '$36', latency: '1.2s', reliability: '99.9%', provider: 'OpenAI', status: 'healthy' },
+    { name: 'Claude 3 Opus', input: '$15', output: '$75', latency: '1.8s', reliability: '99.7%', provider: 'Anthropic', status: 'healthy' },
+    { name: 'Gemini Ultra', input: '$10', output: '$30', latency: '0.9s', reliability: '99.5%', provider: 'Google', status: 'healthy' },
+    { name: 'Llama 3.1 405B', input: '$4', output: '$12', latency: '2.1s', reliability: '98.9%', provider: 'Meta', status: 'degraded' },
+    { name: 'Mistral Large', input: '$8', output: '$24', latency: '1.1s', reliability: '99.8%', provider: 'Mistral', status: 'healthy' },
+    { name: 'DeepSeek V3', input: '$2', output: '$6', latency: '1.5s', reliability: '99.2%', provider: 'DeepSeek', status: 'healthy' },
+  ]
+
+  const agents = [
+    { name: 'Code Agent', desc: 'Code generation & review', price: '$0.02/exec', success: '98.5%', time: '3.2s', users: '12.4k' },
+    { name: 'Research Agent', desc: 'Deep research & analysis', price: '$0.05/task', success: '96.8%', time: '45s', users: '8.7k' },
+    { name: 'Marketing Agent', desc: 'Content & campaign creation', price: '$0.03/task', success: '97.2%', time: '12s', users: '6.3k' },
+    { name: 'Data Agent', desc: 'ETL & data pipeline', price: '$0.04/job', success: '99.1%', time: '8s', users: '5.1k' },
+  ]
+
+  const flowSteps = [
+    { icon: User, label: 'Request', color: '#7C5CFF' },
+    { icon: ArrowRight, label: 'Route', color: '#7C5CFF' },
+    { icon: Zap, label: 'Model', color: '#00D4FF' },
+    { icon: Bot, label: 'Execute', color: '#00D4FF' },
+    { icon: DollarSign, label: 'Bill', color: '#10B981' },
+    { icon: Activity, label: 'Ledger', color: '#10B981' },
+    { icon: CheckCircle2, label: 'Settle', color: '#10B981' },
+  ]
+
+  return (
+    <div className="min-h-screen bg-[#05070B] text-[#EDEDED] overflow-hidden">
+      {/* Background grid effect */}
+      <div className="fixed inset-0 pointer-events-none opacity-[0.03]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }} />
+      </div>
+
+      {/* Glow orbs */}
+      <div className="fixed top-0 left-1/4 w-96 h-96 bg-[#7C5CFF]/10 rounded-full blur-[128px] pointer-events-none" />
+      <div className="fixed bottom-0 right-1/4 w-96 h-96 bg-[#00D4FF]/10 rounded-full blur-[128px] pointer-events-none" />
+
+      {/* NAV */}
+      <nav className="relative z-50 flex justify-between items-center px-8 lg:px-16 py-5 border-b border-white/[0.06] backdrop-blur-md bg-[#05070B]/80">
+        <div className="flex items-center gap-2">
+          <Sparkles className="h-6 w-6 text-[#7C5CFF]" />
+          <span className="text-lg font-semibold tracking-tight">TokenSpark</span>
+        </div>
+        <div className="hidden md:flex gap-8 text-sm text-white/50">
+          <a href="#models" className="hover:text-white transition-colors">Models</a>
+          <a href="#agents" className="hover:text-white transition-colors">Agents</a>
+          <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
+          <a href="#docs" className="hover:text-white transition-colors">Docs</a>
+        </div>
+        <div className="flex gap-3">
+          <button
+            onClick={() => navigate('/login')}
+            className="px-4 py-2 text-sm text-white/70 hover:text-white transition-colors"
+          >
+            Login
+          </button>
+          <button
+            onClick={() => navigate('/register')}
+            className="px-5 py-2 text-sm bg-white text-[#05070B] rounded-md font-medium hover:bg-white/90 transition-all"
+          >
+            Get Started
+          </button>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      <section className="relative py-32 lg:py-44 px-6 text-center">
+        <div className="max-w-4xl mx-auto">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#7C5CFF]/30 bg-[#7C5CFF]/5 text-xs text-[#7C5CFF] mb-8">
+            <Activity className="h-3 w-3" />
+            AI Infrastructure
+          </div>
+
+          <h1 className="text-5xl lg:text-7xl font-semibold leading-[1.1] tracking-tight">
+            The unified AI infrastructure
+            <br />
+            <span className="bg-gradient-to-r from-[#7C5CFF] to-[#00D4FF] bg-clip-text text-transparent">
+              for models and agents.
+            </span>
+          </h1>
+
+          <p className="text-white/50 mt-8 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
+            One API to access every model. One system to run every AI agent.
+            One economy layer to connect them.
+          </p>
+
+          {/* API Demo Input */}
+          <div className="mt-12 flex justify-center gap-3 max-w-xl mx-auto">
+            <div className="flex-1 relative">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-xs text-white/30 font-mono">
+                POST /v1/chat
+              </div>
+              <input
+                value={demoInput}
+                onChange={(e) => setDemoInput(e.target.value)}
+                className="w-full pl-28 pr-4 py-3.5 rounded-lg bg-white/[0.04] border border-white/[0.08] text-sm font-mono focus:outline-none focus:border-[#7C5CFF]/50 transition-colors"
+                placeholder='model: "claude-3-opus"'
+              />
+            </div>
+            <button className="px-6 py-3.5 bg-[#7C5CFF] rounded-lg font-medium hover:bg-[#7C5CFF]/90 transition-all hover:shadow-[0_0_20px_rgba(124,92,255,0.3)] whitespace-nowrap">
+              Run API
+            </button>
+          </div>
+
+          {/* CTA buttons */}
+          <div className="mt-8 flex justify-center gap-4">
+            <button className="px-6 py-2.5 border border-white/10 rounded-md text-sm text-white/70 hover:text-white hover:border-white/20 transition-all flex items-center gap-2">
+              <Code2 className="h-4 w-4" />
+              View Models
+            </button>
+            <button className="px-6 py-2.5 border border-white/10 rounded-md text-sm text-white/70 hover:text-white hover:border-white/20 transition-all flex items-center gap-2">
+              <Bot className="h-4 w-4" />
+              Explore Agents
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* THREE CORE LAYERS */}
+      <section className="px-8 lg:px-16 py-24">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-5">
+          {/* Model Layer */}
+          <div className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-[#7C5CFF]/30 transition-all duration-500 hover:bg-white/[0.04]">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#7C5CFF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative">
+              <div className="w-10 h-10 rounded-lg bg-[#7C5CFF]/10 flex items-center justify-center mb-6">
+                <Cpu className="h-5 w-5 text-[#7C5CFF]" />
+              </div>
+              <h3 className="text-lg font-semibold mb-3">Model Layer</h3>
+              <p className="text-white/50 text-sm leading-relaxed">
+                GPT / Claude / Gemini unified API with automatic routing, fallback system, and real-time pricing.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {['OpenAI', 'Anthropic', 'Google', 'Meta'].map((p) => (
+                  <span key={p} className="px-2.5 py-1 rounded-md bg-white/[0.04] text-xs text-white/40">{p}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Agent Layer */}
+          <div className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-[#00D4FF]/30 transition-all duration-500 hover:bg-white/[0.04]">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#00D4FF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative">
+              <div className="w-10 h-10 rounded-lg bg-[#00D4FF]/10 flex items-center justify-center mb-6">
+                <Bot className="h-5 w-5 text-[#00D4FF]" />
+              </div>
+              <h3 className="text-lg font-semibold mb-3">Agent Layer</h3>
+              <p className="text-white/50 text-sm leading-relaxed">
+                Agent marketplace with task execution, agent-to-agent calls, and automated workflow orchestration.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {['Code', 'Research', 'Marketing', 'Data'].map((a) => (
+                  <span key={a} className="px-2.5 py-1 rounded-md bg-white/[0.04] text-xs text-white/40">{a}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Financial Layer */}
+          <div className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-[#10B981]/30 transition-all duration-500 hover:bg-white/[0.04]">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#10B981]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="relative">
+              <div className="w-10 h-10 rounded-lg bg-[#10B981]/10 flex items-center justify-center mb-6">
+                <Wallet className="h-5 w-5 text-[#10B981]" />
+              </div>
+              <h3 className="text-lg font-semibold mb-3">Financial Layer</h3>
+              <p className="text-white/50 text-sm leading-relaxed">
+                Wallet, billing, double-entry ledger and settlement system. Every transaction is traceable.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {['Wallet', 'Ledger', 'Settlement', 'Stripe'].map((f) => (
+                  <span key={f} className="px-2.5 py-1 rounded-md bg-white/[0.04] text-xs text-white/40">{f}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TAGLINE */}
+      <section className="py-24 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-3xl lg:text-4xl font-semibold leading-tight tracking-tight">
+            TokenSpark is the{' '}
+            <span className="bg-gradient-to-r from-[#7C5CFF] via-[#00D4FF] to-[#10B981] bg-clip-text text-transparent">
+              operating system
+            </span>
+            <br />
+            for the AI economy.
+          </p>
+        </div>
+      </section>
+
+      {/* FLOW ANIMATION */}
+      <section className="py-20 px-8 lg:px-16">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-sm text-white/40 uppercase tracking-wider mb-2">How it works</p>
+            <h2 className="text-2xl font-semibold">From Request to Settlement</h2>
+          </div>
+
+          <div className="flex items-center justify-between gap-2 lg:gap-4">
+            {flowSteps.map((step, i) => {
+              const Icon = step.icon
+              const isActive = i === activeFlowStep
+              const isCompleted = i < activeFlowStep
+              return (
+                <div
+                  key={i}
+                  className={`flex flex-col items-center transition-all duration-500 ${
+                    isActive ? 'scale-110' : 'scale-100'
+                  }`}
+                >
+                  <div
+                    className={`w-12 h-12 lg:w-14 lg:h-14 rounded-xl flex items-center justify-center transition-all duration-500 ${
+                      isActive
+                        ? 'shadow-lg'
+                        : isCompleted
+                        ? 'opacity-70'
+                        : 'opacity-30'
+                    }`}
+                    style={{
+                      background: isActive ? `${step.color}20` : 'rgba(255,255,255,0.03)',
+                      border: `1px solid ${isActive ? step.color + '50' : 'rgba(255,255,255,0.06)'}`,
+                      boxShadow: isActive ? `0 0 20px ${step.color}30` : 'none',
+                    }}
+                  >
+                    <Icon
+                      className="h-5 w-5 lg:h-6 lg:w-6"
+                      style={{ color: isActive ? step.color : 'rgba(255,255,255,0.4)' }}
+                    />
+                  </div>
+                  <span
+                    className={`mt-3 text-xs font-medium transition-colors ${
+                      isActive ? 'text-white' : 'text-white/30'
+                    }`}
+                  >
+                    {step.label}
+                  </span>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* MODELS SECTION */}
+      <section id="models" className="py-24 px-8 lg:px-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <p className="text-sm text-white/40 uppercase tracking-wider mb-2">Model Marketplace</p>
+              <h2 className="text-2xl font-semibold">Unified Model Access</h2>
+            </div>
+            <button className="text-sm text-[#7C5CFF] hover:text-[#7C5CFF]/80 transition-colors flex items-center gap-1">
+              View all models <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {models.map((model) => (
+              <div
+                key={model.name}
+                onMouseEnter={() => setHoveredModel(model.name)}
+                onMouseLeave={() => setHoveredModel(null)}
+                className={`p-5 rounded-xl border transition-all duration-300 cursor-pointer ${
+                  hoveredModel === model.name
+                    ? 'border-[#7C5CFF]/30 bg-[#7C5CFF]/5'
+                    : 'border-white/[0.06] bg-white/[0.02]'
+                }`}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-white/[0.06] flex items-center justify-center">
+                      <Cpu className="h-4 w-4 text-white/50" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium">{model.name}</p>
+                      <p className="text-xs text-white/40">{model.provider}</p>
+                    </div>
+                  </div>
+                  <div className={`w-2 h-2 rounded-full ${
+                    model.status === 'healthy' ? 'bg-emerald-400' : 'bg-amber-400'
+                  }`} />
+                </div>
+                <div className="grid grid-cols-2 gap-3 text-xs">
+                  <div>
+                    <p className="text-white/30 mb-0.5">Input</p>
+                    <p className="font-mono">{model.input} / 1M</p>
+                  </div>
+                  <div>
+                    <p className="text-white/30 mb-0.5">Output</p>
+                    <p className="font-mono">{model.output} / 1M</p>
+                  </div>
+                  <div>
+                    <p className="text-white/30 mb-0.5">Latency</p>
+                    <p className="font-mono">{model.latency}</p>
+                  </div>
+                  <div>
+                    <p className="text-white/30 mb-0.5">Reliability</p>
+                    <p className="font-mono">{model.reliability}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AGENTS SECTION */}
+      <section id="agents" className="py-24 px-8 lg:px-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <p className="text-sm text-white/40 uppercase tracking-wider mb-2">Agent Marketplace</p>
+              <h2 className="text-2xl font-semibold">AI Agents Ready to Deploy</h2>
+            </div>
+            <button className="text-sm text-[#00D4FF] hover:text-[#00D4FF]/80 transition-colors flex items-center gap-1">
+              Browse agents <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {agents.map((agent) => (
+              <div
+                key={agent.name}
+                className="group p-5 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:border-[#00D4FF]/30 hover:bg-[#00D4FF]/5 transition-all duration-300 cursor-pointer"
+              >
+                <div className="w-10 h-10 rounded-lg bg-white/[0.06] flex items-center justify-center mb-4 group-hover:bg-[#00D4FF]/10 transition-colors">
+                  <Bot className="h-5 w-5 text-white/50 group-hover:text-[#00D4FF] transition-colors" />
+                </div>
+                <p className="text-sm font-medium mb-1">{agent.name}</p>
+                <p className="text-xs text-white/40 mb-4">{agent.desc}</p>
+                <div className="space-y-2 text-xs">
+                  <div className="flex justify-between">
+                    <span className="text-white/30">Price</span>
+                    <span className="font-mono text-white/70">{agent.price}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-white/30">Success</span>
+                    <span className="font-mono text-emerald-400">{agent.success}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-white/30">Avg Time</span>
+                    <span className="font-mono text-white/70">{agent.time}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PARTNER / DISTRIBUTION SECTION */}
+      <section className="py-24 px-8 lg:px-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative p-10 lg:p-16 rounded-3xl border border-white/[0.06] bg-gradient-to-br from-[#7C5CFF]/5 via-transparent to-[#00D4FF]/5 overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#7C5CFF]/10 rounded-full blur-[100px]" />
+            <div className="relative">
+              <div className="flex items-center gap-2 mb-4">
+                <Globe className="h-5 w-5 text-[#7C5CFF]" />
+                <p className="text-sm text-white/40 uppercase tracking-wider">Partner Network</p>
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-semibold mb-4">
+                Build your own AI revenue network.
+              </h2>
+              <p className="text-white/50 text-lg mb-10 max-w-xl">
+                Invite users, earn commission. Multi-level partner system with real-time settlement.
+              </p>
+
+              <div className="grid sm:grid-cols-3 gap-6 mb-10">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-[#7C5CFF]/10 flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="h-4 w-4 text-[#7C5CFF]" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium mb-1">Consume to Earn</p>
+                    <p className="text-xs text-white/40">Commission based on real usage, not referrals</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-[#00D4FF]/10 flex items-center justify-center flex-shrink-0">
+                    <Shield className="h-4 w-4 text-[#00D4FF]" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium mb-1">Multi-Level</p>
+                    <p className="text-xs text-white/40">L1 Partner (10-20%) + L2 Sub Partner (3-8%)</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-[#10B981]/10 flex items-center justify-center flex-shrink-0">
+                    <Clock className="h-4 w-4 text-[#10B981]" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium mb-1">T+0 Settlement</p>
+                    <p className="text-xs text-white/40">Real-time payout via Stripe / Alipay / USDT</p>
+                  </div>
+                </div>
+              </div>
+
+              <button className="px-6 py-3 bg-[#7C5CFF] rounded-lg font-medium hover:bg-[#7C5CFF]/90 transition-all hover:shadow-[0_0_20px_rgba(124,92,255,0.3)] flex items-center gap-2">
+                Become a Partner
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section id="pricing" className="py-24 px-8 lg:px-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-sm text-white/40 uppercase tracking-wider mb-2">Pricing</p>
+          <h2 className="text-2xl font-semibold mb-4">Transparent Pricing</h2>
+          <p className="text-white/50 max-w-xl mx-auto mb-12">
+            Pay only for what you use. No subscriptions, no hidden fees.
+            Unified rate card across all models and agents.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-4 text-left">
+            {[
+              { tier: 'Free', price: '$0', tokens: '1M tokens/mo', features: ['Community models', 'Basic routing', 'Email support'] },
+              { tier: 'Pro', price: 'Pay-as-you-go', tokens: 'All models', features: ['Priority routing', 'Fallback system', 'Agent access', 'Analytics'], popular: true },
+              { tier: 'Enterprise', price: 'Custom', tokens: 'Volume pricing', features: ['Dedicated support', 'SLA guarantee', 'White-label', 'Custom billing'] },
+            ].map((plan) => (
+              <div
+                key={plan.tier}
+                className={`p-6 rounded-xl border transition-all ${
+                  plan.popular
+                    ? 'border-[#7C5CFF]/30 bg-[#7C5CFF]/5'
+                    : 'border-white/[0.06] bg-white/[0.02]'
+                }`}
+              >
+                {plan.popular && (
+                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#7C5CFF]/20 text-xs text-[#7C5CFF] mb-3">
+                    Popular
+                  </span>
+                )}
+                <p className="text-lg font-semibold">{plan.tier}</p>
+                <p className="text-2xl font-semibold mt-2 mb-1">{plan.price}</p>
+                <p className="text-xs text-white/40 mb-6">{plan.tokens}</p>
+                <ul className="space-y-2">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-center gap-2 text-sm text-white/60">
+                      <CheckCircle2 className="h-4 w-4 text-[#7C5CFF] flex-shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 px-8 lg:px-16">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl lg:text-4xl font-semibold mb-4">
+            Start building with TokenSpark
+          </h2>
+          <p className="text-white/50 text-lg mb-8">
+            One API key. Every model. Every agent.
+          </p>
+          <div className="flex justify-center gap-4">
+            <button
+              onClick={() => navigate('/register')}
+              className="px-8 py-3.5 bg-white text-[#05070B] rounded-lg font-medium hover:bg-white/90 transition-all"
+            >
+              Get Started Free
+            </button>
+            <button className="px-8 py-3.5 border border-white/10 rounded-lg text-sm text-white/70 hover:text-white hover:border-white/20 transition-all">
+              Read Docs
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-white/[0.06] py-12 px-8 lg:px-16">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+            <div>
+              <p className="text-sm font-medium mb-4">Product</p>
+              <ul className="space-y-2 text-xs text-white/40">
+                <li><a href="#" className="hover:text-white/60 transition-colors">Models</a></li>
+                <li><a href="#" className="hover:text-white/60 transition-colors">Agents</a></li>
+                <li><a href="#" className="hover:text-white/60 transition-colors">Pricing</a></li>
+                <li><a href="#" className="hover:text-white/60 transition-colors">Changelog</a></li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-sm font-medium mb-4">Resources</p>
+              <ul className="space-y-2 text-xs text-white/40">
+                <li><a href="#" className="hover:text-white/60 transition-colors">API Docs</a></li>
+                <li><a href="#" className="hover:text-white/60 transition-colors">SDKs</a></li>
+                <li><a href="#" className="hover:text-white/60 transition-colors">Guides</a></li>
+                <li><a href="#" className="hover:text-white/60 transition-colors">Blog</a></li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-sm font-medium mb-4">Company</p>
+              <ul className="space-y-2 text-xs text-white/40">
+                <li><a href="#" className="hover:text-white/60 transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-white/60 transition-colors">Careers</a></li>
+                <li><a href="#" className="hover:text-white/60 transition-colors">Partners</a></li>
+                <li><a href="#" className="hover:text-white/60 transition-colors">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-sm font-medium mb-4">Legal</p>
+              <ul className="space-y-2 text-xs text-white/40">
+                <li><a href="#" className="hover:text-white/60 transition-colors">Privacy</a></li>
+                <li><a href="#" className="hover:text-white/60 transition-colors">Terms</a></li>
+                <li><a href="#" className="hover:text-white/60 transition-colors">Security</a></li>
+                <li><a href="#" className="hover:text-white/60 transition-colors">Status</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-white/[0.06] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-2">
+              <Sparkles className="h-4 w-4 text-[#7C5CFF]" />
+              <span className="text-sm font-medium">TokenSpark</span>
+            </div>
+            <p className="text-xs text-white/30">
+              © 2026 TokenSpark. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
+
+export default TokenSparkHome

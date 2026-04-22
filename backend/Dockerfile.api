@@ -1,0 +1,20 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package.json turbo.json tsconfig.base.json ./
+COPY packages/api/package.json ./packages/api/
+COPY packages/domain/package.json ./packages/domain/
+COPY packages/billing/package.json ./packages/billing/
+COPY packages/ledger/package.json ./packages/ledger/
+COPY packages/agentspark/package.json ./packages/agentspark/
+COPY packages/distribution/package.json ./packages/distribution/
+COPY shared/lib ./shared/lib
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev:api"]

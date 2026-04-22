@@ -1,0 +1,25 @@
+{
+  "name": "tokenspark-api",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/server.ts",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "fastify": "^5.2.0",
+    "@fastify/cors": "^10.0.0",
+    "pg": "^8.13.0",
+    "ioredis": "^5.4.0",
+    "zod": "^3.24.0",
+    "stripe": "^17.4.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "~5.6.2",
+    "@types/pg": "^8.11.10"
+  }
+}

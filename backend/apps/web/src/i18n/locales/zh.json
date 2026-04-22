@@ -1,0 +1,152 @@
+{
+  "brand": {
+    "name": "词元闪耀",
+    "tagline": "AI 经济基础设施层",
+    "subtitle": "统一 API 访问、计费系统、钱包和全球 AI 定价网络"
+  },
+  "nav": {
+    "platform": "平台",
+    "pricing": "定价",
+    "docs": "文档",
+    "partners": "合作伙伴",
+    "getStarted": "开始使用",
+    "dashboard": "控制台",
+    "login": "登录",
+    "logout": "退出"
+  },
+  "hero": {
+    "badge": "AI 经济基础设施层",
+    "title1": "一个 API。所有模型。",
+    "title2": "统一计费。",
+    "subtitle": "统一 API 访问、钱包系统、定价引擎和全球 AI 分发网络——全部集成在一个平台中。",
+    "placeholder": "试试：gpt-4.1 / claude-3-opus / gemini",
+    "run": "运行",
+    "learnMore": "了解更多"
+  },
+  "coreProducts": {
+    "title": "核心产品架构",
+    "subtitle": "为整个 AI 经济基础设施提供动力的三个基础层。",
+    "api": {
+      "title": "API 聚合层",
+      "desc": "OpenAI、Claude、Gemini、Mistral、Llama 统一到一个 API 端点。一次集成，无限模型。"
+    },
+    "billing": {
+      "title": "Token 计费层",
+      "desc": "统一钱包、定价引擎、用量计量和结算系统。追踪每个 token，结算每笔交易。"
+    },
+    "distribution": {
+      "title": "分发网络",
+      "desc": "多级代理、白标 SaaS、企业计费网络。全球扩展您的 AI 业务。"
+    }
+  },
+  "agentSpark": {
+    "badge": "子系统",
+    "title": "AgentSpark — 执行子系统",
+    "subtitle": "词元闪耀的执行引擎。负责路由、计算和 AI 运行时编排。",
+    "runtime": {
+      "title": "执行运行时",
+      "desc": "运行 AI 任务、工具调用和 Agent 工作流。可扩展计算支持任何工作负载。"
+    },
+    "routing": {
+      "title": "路由引擎",
+      "desc": "根据成本、延迟和能力匹配将请求路由到最佳代理或模型。"
+    },
+    "fallback": {
+      "title": "故障转移管理",
+      "desc": "当主路由失败时自动切换到备用提供商。零停机时间。"
+    },
+    "monitoring": {
+      "title": "性能监控",
+      "desc": "实时延迟跟踪、错误率和成本优化分析。"
+    }
+  },
+  "systemFlow": {
+    "title": "系统流程",
+    "subtitle": "从请求到结算——通过词元闪耀的 API 调用完整生命周期。",
+    "steps": [
+      { "title": "用户发送 API 请求", "desc": "请求到达词元闪耀统一端点，包含模型偏好" },
+      { "title": "AgentSpark 选择路由", "desc": "路由引擎根据成本和延迟选择最优提供商" },
+      { "title": "词元闪耀计算价格", "desc": "实时定价引擎根据模型和 token 计算成本" },
+      { "title": "钱包余额冻结", "desc": "从用户钱包预留预估费用以确保交易安全" },
+      { "title": "AgentSpark 执行", "desc": "请求路由到选定提供商，推理运行" },
+      { "title": "返回响应", "desc": "生成的响应通过词元闪耀流式返回" },
+      { "title": "用量计量与结算", "desc": "计算实际用量，调整余额，结算提供商" }
+    ]
+  },
+  "pricing": {
+    "title": "统一定价 —",
+    "titleAccent": "一个费率卡",
+    "subtitle": "所有模型透明定价。按 token 付费，无隐藏费用。",
+    "input": "输入",
+    "output": "输出",
+    "context": "上下文",
+    "perMillion": "/ 1M",
+    "popular": "最受欢迎",
+    "getStarted": "开始使用"
+  },
+  "distribution": {
+    "title": "AI 经济",
+    "titleAccent": "网络",
+    "subtitle": "邀请用户、赚取佣金，在词元闪耀上建立您自己的 AI API 业务。",
+    "commission": {
+      "title": "赚取佣金",
+      "desc": "为每个推荐用户及其使用量获得回报。"
+    },
+    "whitelabel": {
+      "title": "白标 SaaS",
+      "desc": "立即推出您自己品牌的 AI 平台。"
+    },
+    "network": {
+      "title": "多级网络",
+      "desc": "建立团队并从下游活动中获得回报。"
+    },
+    "scale": {
+      "title": "无限扩展",
+      "desc": "从个人到企业——无限制增长。"
+    },
+    "becomePartner": "成为合作伙伴",
+    "learnMore": "了解更多"
+  },
+  "footer": {
+    "product": "产品",
+    "company": "公司",
+    "resources": "资源",
+    "legal": "法律",
+    "api": "API",
+    "changelog": "更新日志",
+    "about": "关于",
+    "blog": "博客",
+    "careers": "招聘",
+    "press": "新闻",
+    "community": "社区",
+    "helpCenter": "帮助中心",
+    "status": "状态",
+    "contact": "联系我们",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "security": "安全",
+    "cookies": "Cookies",
+    "copyright": "© 2026 词元闪耀。保留所有权利。"
+  },
+  "wallet": {
+    "balance": "余额",
+    "available": "可用",
+    "reserved": "已冻结",
+    "topup": "充值",
+    "transactions": "交易记录",
+    "history": "历史记录"
+  },
+  "errors": {
+    "insufficientFunds": "余额不足",
+    "rateLimitExceeded": "请求频率超限",
+    "invalidApiKey": "API 密钥无效",
+    "providerError": "提供商错误",
+    "modelNotFound": "未找到模型"
+  },
+  "language": {
+    "zh": "简体中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ru": "Русский"
+  }
+}

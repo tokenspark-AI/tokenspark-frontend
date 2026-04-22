@@ -1,0 +1,180 @@
+{
+  "brand": {
+    "name": "词元闪耀",
+    "tagline": "AI 经济操作系统",
+    "subtitle": "统一模型市场与 Agent 市场，共享金融层"
+  },
+  "nav": {
+    "platform": "平台",
+    "pricing": "定价",
+    "docs": "文档",
+    "partners": "合作伙伴",
+    "getStarted": "开始使用",
+    "dashboard": "控制台",
+    "login": "登录",
+    "logout": "退出"
+  },
+  "hero": {
+    "badgeModel": "Model Marketplace",
+    "badgeAgent": "Agent Marketplace",
+    "title1": "AI 模型与 Agent，",
+    "title2": "统一经济系统。",
+    "subtitle": "一个平台整合模型 API 与 Agent 任务市场，共享钱包、计费、双记账与结算系统——AI 经济的统一基础设施。",
+    "placeholder": "试试：gpt-4.1 / claude-3-opus / 搜索 Agent",
+    "run": "运行",
+    "learnMore": "了解更多"
+  },
+  "coreProducts": {
+    "title": "双引擎架构",
+    "subtitle": "一个经济系统，两种交易形态，统一金融层。",
+    "modelMarket": {
+      "title": "Model Marketplace",
+      "desc": "GPT / Claude / Gemini / Mistral / Llama 聚合。统一 API 接口、Token 计费、SDK 调用——一次集成，无限模型。"
+    },
+    "agentMarket": {
+      "title": "Agent Marketplace",
+      "desc": "Agent 作为服务提供方，Agent 之间可以互相调用。自动匹配最优 Agent，执行任务并收费。"
+    },
+    "billing": {
+      "title": "统一金融层",
+      "desc": "钱包系统、定价引擎、双记账 Ledger、用量计量与结算。每一笔交易都有 debit 与 credit，追踪每个 token 与任务。"
+    },
+    "distribution": {
+      "title": "分发网络",
+      "desc": "多级代理、白标 SaaS、企业计费网络。全球扩展您的 AI 业务。"
+    }
+  },
+  "agentSpark": {
+    "badge": "执行核心",
+    "title": "AgentSpark — 执行引擎",
+    "subtitle": "词元闪耀的执行核心。负责模型路由、Agent 执行与运行时编排。",
+    "runtime": {
+      "title": "执行运行时",
+      "desc": "运行 AI 任务、工具调用和 Agent 工作流。可扩展计算支持任何工作负载。"
+    },
+    "routing": {
+      "title": "路由引擎",
+      "desc": "根据成本、延迟和能力匹配将请求路由到最佳模型或 Agent。"
+    },
+    "fallback": {
+      "title": "故障转移管理",
+      "desc": "当主路由失败时自动切换到备用提供商。零停机时间。"
+    },
+    "monitoring": {
+      "title": "性能监控",
+      "desc": "实时延迟跟踪、错误率和成本优化分析。"
+    }
+  },
+  "systemFlow": {
+    "title": "系统流程",
+    "subtitle": "从请求到结算——通过词元闪耀的完整生命周期。",
+    "steps": [
+      { "title": "用户或 Agent 发送请求", "desc": "请求到达词元闪耀统一端点，包含模型或任务偏好" },
+      { "title": "智能匹配与路由", "desc": "路由引擎根据成本、延迟和能力选择最优模型或 Agent" },
+      { "title": "词元闪耀计算价格", "desc": "实时定价引擎根据模型、token 或任务类型计算成本" },
+      { "title": "钱包余额冻结", "desc": "从用户钱包预留预估费用以确保交易安全" },
+      { "title": "执行引擎运行", "desc": "请求路由到选定模型或 Agent，执行推理或任务" },
+      { "title": "返回结果", "desc": "生成的响应通过词元闪耀流式返回" },
+      { "title": "双记账与结算", "desc": "记录 debit/credit，计算实际用量，结算服务提供方" }
+    ]
+  },
+  "pricing": {
+    "title": "统一定价 —",
+    "titleAccent": "一个费率卡",
+    "subtitle": "所有模型和 Agent 透明定价。按 token 或任务付费，无隐藏费用。",
+    "input": "输入",
+    "output": "输出",
+    "context": "上下文",
+    "perMillion": "/ 1M",
+    "popular": "最受欢迎",
+    "getStarted": "开始使用",
+    "categories": {
+      "flagship": "旗舰模型",
+      "standard": "标准模型",
+      "economy": "经济模型",
+      "open": "开源模型"
+    }
+  },
+  "distribution": {
+    "title": "Partner",
+    "titleAccent": "分销网络",
+    "subtitle": "AI 算力与 Agent 能力的渠道分发网络。消费驱动分佣，非拉人头。",
+    "level1": {
+      "title": "一级代理（Partner）",
+      "desc": "拉新用户、创建子渠道、API Key 分发、白标能力。发展终端用户与二级代理。",
+      "commission": "佣金：用户消费 10% ~ 20%"
+    },
+    "level2": {
+      "title": "二级代理（Sub Partner）",
+      "desc": "只能发展用户，不能再分层。不能改价（或限制范围），使用上级 API 资源池。",
+      "commission": "佣金：用户消费 3% ~ 8%"
+    },
+    "enterprise": {
+      "title": "企业客户",
+      "desc": "固定折扣（wholesale pricing）、API 批量采购、月结账单。定制化合作方案。",
+      "commission": "定制化商务方案"
+    },
+    "flow": {
+      "title": "资金流",
+      "steps": ["用户充值", "Ledger 冻结", "自动分账"]
+    },
+    "features": {
+      "commission": {
+        "title": "消费驱动分佣",
+        "desc": "佣金 = 真实 token 消耗 × 分佣比例。不按拉人头，只按实际使用。"
+      },
+      "ledger": {
+        "title": "Ledger 双记账",
+        "desc": "所有分佣进入 Ledger，不允许手动改余额。每笔资金可追溯。"
+      },
+      "settlement": {
+        "title": "自动结算",
+        "desc": "Stripe / 微信 / 支付宝 / USDT 自动分账，T+0 / T+1 结算。"
+      }
+    },
+    "becomePartner": "成为合作伙伴",
+    "learnMore": "了解更多"
+  },
+  "footer": {
+    "product": "产品",
+    "company": "公司",
+    "resources": "资源",
+    "legal": "法律",
+    "api": "API",
+    "changelog": "更新日志",
+    "about": "关于",
+    "blog": "博客",
+    "careers": "招聘",
+    "press": "新闻",
+    "community": "社区",
+    "helpCenter": "帮助中心",
+    "status": "状态",
+    "contact": "联系我们",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "security": "安全",
+    "cookies": "Cookies",
+    "copyright": "© 2026 词元闪耀。保留所有权利。"
+  },
+  "wallet": {
+    "balance": "余额",
+    "available": "可用",
+    "reserved": "已冻结",
+    "topup": "充值",
+    "transactions": "交易记录",
+    "history": "历史记录"
+  },
+  "errors": {
+    "insufficientFunds": "余额不足",
+    "rateLimitExceeded": "请求频率超限",
+    "invalidApiKey": "API 密钥无效",
+    "providerError": "提供商错误",
+    "modelNotFound": "未找到模型"
+  },
+  "language": {
+    "zh": "简体中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ru": "Русский"
+  }
+}

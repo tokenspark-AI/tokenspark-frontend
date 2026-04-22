@@ -1,0 +1,16 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package.json turbo.json tsconfig.base.json ./
+COPY packages/ledger/package.json ./packages/ledger/
+COPY packages/domain/package.json ./packages/domain/
+COPY shared/lib ./shared/lib
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3002
+
+CMD ["npm", "run", "dev:ledger"]

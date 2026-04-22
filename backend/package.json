@@ -1,0 +1,30 @@
+{
+  "name": "tokenspark",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI Economy Infrastructure Layer — Unified API, Billing, Wallet & Distribution",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "dev:api": "turbo run dev --filter=tokenspark-api",
+    "dev:ledger": "turbo run dev --filter=tokenspark-ledger",
+    "dev:billing": "turbo run dev --filter=tokenspark-billing",
+    "dev:agentspark": "turbo run dev --filter=agentspark-runtime",
+    "dev:distribution": "turbo run dev --filter=tokenspark-distribution",
+    "dev:web": "turbo run dev --filter=tokenspark-web",
+    "build": "turbo run build",
+    "db:migrate": "dotenv -e shared/.env -- node shared/db/migrate.mjs",
+    "db:seed": "dotenv -e shared/.env -- node shared/db/seed.mjs"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.0",
+    "typescript": "~5.6.2",
+    "@types/node": "^22.10.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

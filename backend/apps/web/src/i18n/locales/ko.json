@@ -1,0 +1,152 @@
+{
+  "brand": {
+    "name": "토큰스파크",
+    "tagline": "AI 경제 인프라 레이어",
+    "subtitle": "통합 API 액세스, 결제 시스템, 지갑, 글로벌 AI 가격 네트워크"
+  },
+  "nav": {
+    "platform": "플랫폼",
+    "pricing": "요금",
+    "docs": "문서",
+    "partners": "파트너",
+    "getStarted": "시작하기",
+    "dashboard": "대시보드",
+    "login": "로그인",
+    "logout": "로그아웃"
+  },
+  "hero": {
+    "badge": "AI 경제 인프라 레이어",
+    "title1": "하나의 API. 모든 모델.",
+    "title2": "통합 결제.",
+    "subtitle": "통합 API 액세스, 지갑 시스템, 가격 엔진, 글로벌 AI 배포 네트워크 — 모든 것을 하나의 플랫폼에 통합.",
+    "placeholder": "시도: gpt-4.1 / claude-3-opus / gemini",
+    "run": "실행",
+    "learnMore": "자세히 보기"
+  },
+  "coreProducts": {
+    "title": "핵심 제품 구조",
+    "subtitle": "전체 AI 경제 인프라를 구동하는 세 가지 기반 레이어.",
+    "api": {
+      "title": "API 집계 레이어",
+      "desc": "OpenAI, Claude, Gemini, Mistral, Llama를 하나의 API 엔드포인트로 통합. 한 번의 통합으로 무한한 모델."
+    },
+    "billing": {
+      "title": "토큰 결제 레이어",
+      "desc": "통합 지갑, 가격 엔진, 사용량 측정, 정산 시스템. 모든 토큰을 추적하고 모든 거래를 정산."
+    },
+    "distribution": {
+      "title": "배포 네트워크",
+      "desc": "멀티 레벨 에이전트, 화이트라벨 SaaS, 엔터프라이즈 청구 네트워크. AI 비즈니스를 글로벌로 확장."
+    }
+  },
+  "agentSpark": {
+    "badge": "서브시스템",
+    "title": "AgentSpark — 실행 서브시스템",
+    "subtitle": "토큰스파크의 실행 엔진. 라우팅, 컴퓨팅, AI 런타임 오케스트레이션을 담당.",
+    "runtime": {
+      "title": "실행 런타임",
+      "desc": "AI 작업, 도구 호출, 에이전트 워크플로우를 실행. 어떤 워크로드에도 확장 가능한 컴퓨팅."
+    },
+    "routing": {
+      "title": "라우팅 엔진",
+      "desc": "비용, 지연 시간, 기능 매칭을 기반으로 요청을 최적의 에이전트 또는 모델로 라우팅."
+    },
+    "fallback": {
+      "title": "폴백 관리",
+      "desc": "기본 경로가 실패할 때 자동으로 대체 제공자로 전환. 제로 다운타임."
+    },
+    "monitoring": {
+      "title": "성능 모니터링",
+      "desc": "실시간 지연 시간 추적, 오류율, 비용 최적화 분석."
+    }
+  },
+  "systemFlow": {
+    "title": "시스템 흐름",
+    "subtitle": "요청에서 정산까지 — 토큰스파크를 통한 API 호출의 완전한 라이프사이클.",
+    "steps": [
+      { "title": "사용자가 API 요청 전송", "desc": "모델 선호도와 함께 토큰스파크 통합 엔드포인트에 요청 도달" },
+      { "title": "AgentSpark가 경로 선택", "desc": "라우팅 엔진이 비용과 지연 시간을 기반으로 최적의 제공자 선택" },
+      { "title": "토큰스파크가 가격 계산", "desc": "실시간 가격 엔진이 모델과 토큰을 기반으로 비용 계산" },
+      { "title": "지갑 잔액 동결", "desc": "거래 안전을 위해 사용자 지갑에서 예상 비용을 예약" },
+      { "title": "AgentSpark 실행", "desc": "요청이 선택된 제공자로 라우팅되어 추론 실행" },
+      { "title": "응답 반환", "desc": "생성된 응답이 토큰스파크를 통해 스트리밍으로 반환" },
+      { "title": "사용량 측정 및 정산", "desc": "실제 사용량 계산, 잔액 조정, 제공자 정산" }
+    ]
+  },
+  "pricing": {
+    "title": "통합 가격 —",
+    "titleAccent": "하나의 요금표",
+    "subtitle": "모든 모델에 대해 투명한 가격. 토큰당 지불, 숨겨진 비용 없음.",
+    "input": "입력",
+    "output": "출력",
+    "context": "컨텍스트",
+    "perMillion": "/ 1M",
+    "popular": "가장 인기",
+    "getStarted": "시작하기"
+  },
+  "distribution": {
+    "title": "AI 경제",
+    "titleAccent": "네트워크",
+    "subtitle": "사용자를 초대하고 커미션을 받으며 토큰스파크에서 자체 AI API 비즈니스를 구축하세요.",
+    "commission": {
+      "title": "커미션 획득",
+      "desc": "추천 사용자 및 사용량에 따라 보상을 받습니다."
+    },
+    "whitelabel": {
+      "title": "화이트라벨 SaaS",
+      "desc": "자체 브랜드로 AI 플랫폼을 즉시 출시."
+    },
+    "network": {
+      "title": "멀티 레벨 네트워크",
+      "desc": "팀을 구축하고 다운스트림 활동에서 보상을 받습니다."
+    },
+    "scale": {
+      "title": "무한 확장",
+      "desc": "개인부터 엔터프라이즈까지 — 제한 없이 성장."
+    },
+    "becomePartner": "파트너 되기",
+    "learnMore": "자세히 보기"
+  },
+  "footer": {
+    "product": "제품",
+    "company": "회사",
+    "resources": "리소스",
+    "legal": "법적 정보",
+    "api": "API",
+    "changelog": "변경 이력",
+    "about": "소개",
+    "blog": "블로그",
+    "careers": "채용",
+    "press": "보도 자료",
+    "community": "커뮤니티",
+    "helpCenter": "도움말 센터",
+    "status": "상태",
+    "contact": "문의하기",
+    "privacy": "개인정보처리방침",
+    "terms": "서비스 약관",
+    "security": "보안",
+    "cookies": "쿠키",
+    "copyright": "© 2026 토큰스파크. 모든 권리 보유."
+  },
+  "wallet": {
+    "balance": "잔액",
+    "available": "사용 가능",
+    "reserved": "예약됨",
+    "topup": "충전",
+    "transactions": "거래 내역",
+    "history": "이력"
+  },
+  "errors": {
+    "insufficientFunds": "잔액 부족",
+    "rateLimitExceeded": "요청 제한 초과",
+    "invalidApiKey": "잘못된 API 키",
+    "providerError": "제공자 오류",
+    "modelNotFound": "모델을 찾을 수 없습니다"
+  },
+  "language": {
+    "zh": "简体中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ru": "Русский"
+  }
+}

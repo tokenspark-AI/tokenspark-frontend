@@ -1,0 +1,180 @@
+{
+  "brand": {
+    "name": "トークンスパーク",
+    "tagline": "AIエコノミーオペレーティングシステム",
+    "subtitle": "モデルマーケットプレイスとエージェントマーケットプレイスを統一、共有金融レイヤー"
+  },
+  "nav": {
+    "platform": "プラットフォーム",
+    "pricing": "料金",
+    "docs": "ドキュメント",
+    "partners": "パートナー",
+    "getStarted": "始める",
+    "dashboard": "ダッシュボード",
+    "login": "ログイン",
+    "logout": "ログアウト"
+  },
+  "hero": {
+    "badgeModel": "Model Marketplace",
+    "badgeAgent": "Agent Marketplace",
+    "title1": "AIモデルとエージェント、",
+    "title2": "統一経済システム。",
+    "subtitle": "1つのプラットフォームでモデルAPIとエージェントタスクマーケットプレイスを統合。共有ウォレット、請求、二重簿記、決済システム——AI経済の統一インフラストラクチャ。",
+    "placeholder": "试试：gpt-4.1 / claude-3-opus / エージェントを検索",
+    "run": "実行",
+    "learnMore": "詳細を見る"
+  },
+  "coreProducts": {
+    "title": "デュアルエンジン構造",
+    "subtitle": "1つの経済システム、2つの取引形態、統一金融レイヤー。",
+    "modelMarket": {
+      "title": "Model Marketplace",
+      "desc": "GPT / Claude / Gemini / Mistral / Llama を集約。統一API、トークン請求、SDK統合——1回の統合で無限のモデル。"
+    },
+    "agentMarket": {
+      "title": "Agent Marketplace",
+      "desc": "エージェントがサービス提供者として機能。エージェント同士が相互に呼び出し可能。最適なエージェントを自動マッチング、タスクを実行して課金。"
+    },
+    "billing": {
+      "title": "統一金融レイヤー",
+      "desc": "ウォレットシステム、価格エンジン、二重簿記Ledger、使用量測定と決済。すべての取引にdebitとcredit、すべてのトークンとタスクを追跡。"
+    },
+    "distribution": {
+      "title": "配信ネットワーク",
+      "desc": "マルチレベルエージェント、ホワイトレーベルSaaS、エンタープライズ請求ネットワーク。AIビジネスをグローバルに展開。"
+    }
+  },
+  "agentSpark": {
+    "badge": "実行コア",
+    "title": "AgentSpark — 実行エンジン",
+    "subtitle": "トークンスパークの実行コア。モデルルーティング、エージェント実行、ランタイムオーケストレーションを担当。",
+    "runtime": {
+      "title": "実行ランタイム",
+      "desc": "AIタスク、ツール呼び出し、エージェントワークフローを実行。あらゆるワークロードに対応するスケーラブルなコンピューティング。"
+    },
+    "routing": {
+      "title": "ルーティングエンジン",
+      "desc": "コスト、レイテンシ、能力マッチングに基づいてリクエストを最適なモデルまたはエージェントにルーティング。"
+    },
+    "fallback": {
+      "title": "フォールバック管理",
+      "desc": "プライマリルートが失敗したときに自動的に代替プロバイダーに切り替え。ゼロダウンタイム。"
+    },
+    "monitoring": {
+      "title": "パフォーマンスモニタリング",
+      "desc": "リアルタイムレイテンシ追跡、エラーレート、コスト最適化分析。"
+    }
+  },
+  "systemFlow": {
+    "title": "システムフロー",
+    "subtitle": "リクエストから決済まで——トークンスパークを通じた完全なライフサイクル。",
+    "steps": [
+      { "title": "ユーザーまたはエージェントがリクエストを送信", "desc": "リクエストがモデルまたはタスクの好みとともにトークンスパーク統一エンドポイントに到達" },
+      { "title": "スマートマッチングとルーティング", "desc": "ルーティングエンジンがコスト、レイテンシ、能力に基づいて最適なモデルまたはエージェントを選択" },
+      { "title": "トークンスパークが価格を計算", "desc": "リアルタイム価格エンジンがモデル、トークン、またはタスクタイプに基づいてコストを計算" },
+      { "title": "ウォレット残高を凍結", "desc": "取引の安全を確保するため、ユーザーウォレットから見積もり費用を確保" },
+      { "title": "実行エンジンが実行", "desc": "リクエストが選択されたモデルまたはエージェントにルーティングされ、推論またはタスクが実行される" },
+      { "title": "結果を返す", "desc": "生成されたレスポンスがトークンスパークを通じてストリーミングで返される" },
+      { "title": "二重簿記と決済", "desc": "debit/creditを記録、実際の使用量を計算、サービス提供者を決済" }
+    ]
+  },
+  "pricing": {
+    "title": "統一価格 —",
+    "titleAccent": "1つのレートカード",
+    "subtitle": "すべてのモデルとエージェントで透明な価格。トークンまたはタスクごとに支払い、隠れた費用はありません。",
+    "input": "入力",
+    "output": "出力",
+    "context": "コンテキスト",
+    "perMillion": "/ 1M",
+    "popular": "最も人気",
+    "getStarted": "始める",
+    "categories": {
+      "flagship": "フラッグシップモデル",
+      "standard": "スタンダードモデル",
+      "economy": "エコノミーモデル",
+      "open": "オープンソースモデル"
+    }
+  },
+  "distribution": {
+    "title": "Partner",
+    "titleAccent": "チャネルネットワーク",
+    "subtitle": "AIコンピュートとエージェント機能のチャネル配布ネットワーク。消費駆動型コミッション、人头ではない。",
+    "level1": {
+      "title": "レベル1パートナー（Partner）",
+      "desc": "新規ユーザー獲得、サブチャネル作成、APIキー配布、ホワイトラベル機能。エンドユーザーとレベル2パートナーを開発。",
+      "commission": "コミッション：ユーザー消費の 10% ~ 20%"
+    },
+    "level2": {
+      "title": "レベル2サブパートナー（Sub Partner）",
+      "desc": "ユーザーのみ開発可能、さらに階層を作成不可。価格変更不可（または制限範囲）、上位のAPIリソースプールを使用。",
+      "commission": "コミッション：ユーザー消費の 3% ~ 8%"
+    },
+    "enterprise": {
+      "title": "エンタープライズ顧客",
+      "desc": "固定割引（卸売価格）、API一括購入、月次請求。カスタマイズされた提携プラン。",
+      "commission": "カスタマイズされた商务プラン"
+    },
+    "flow": {
+      "title": "資金フロー",
+      "steps": ["ユーザーチャージ", "Ledger凍結", "自動配分"]
+    },
+    "features": {
+      "commission": {
+        "title": "消費駆動型コミッション",
+        "desc": "コミッション = 実際のトークン消費 × 配分比率。人头ではなく、実際の使用量に基づく。"
+      },
+      "ledger": {
+        "title": "Ledger二重簿記",
+        "desc": "すべてのコミッションはLedgerに入り、手動での残高変更は不可。すべての資金は追跡可能。"
+      },
+      "settlement": {
+        "title": "自動決済",
+        "desc": "Stripe / WeChat / Alipay / USDT による自動配分、T+0 / T+1 決済。"
+      }
+    },
+    "becomePartner": "パートナーになる",
+    "learnMore": "詳細を見る"
+  },
+  "footer": {
+    "product": "プロダクト",
+    "company": "会社",
+    "resources": "リソース",
+    "legal": "法的情報",
+    "api": "API",
+    "changelog": "変更履歴",
+    "about": "概要",
+    "blog": "ブログ",
+    "careers": "採用",
+    "press": "プレス",
+    "community": "コミュニティ",
+    "helpCenter": "ヘルプセンター",
+    "status": "ステータス",
+    "contact": "お問い合わせ",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "security": "セキュリティ",
+    "cookies": "Cookie",
+    "copyright": "© 2026 トークンスパーク。全著作権所有。"
+  },
+  "wallet": {
+    "balance": "残高",
+    "available": "利用可能",
+    "reserved": "凍結済み",
+    "topup": "チャージ",
+    "transactions": "取引履歴",
+    "history": "履歴"
+  },
+  "errors": {
+    "insufficientFunds": "残高不足",
+    "rateLimitExceeded": "リクエスト制限超過",
+    "invalidApiKey": "APIキーが無効です",
+    "providerError": "プロバイダーエラー",
+    "modelNotFound": "モデルが見つかりません"
+  },
+  "language": {
+    "zh": "简体中文",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ru": "Русский"
+  }
+}

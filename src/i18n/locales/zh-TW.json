@@ -1,0 +1,207 @@
+{
+  "brand": {
+    "name": "詞元閃耀",
+    "tagline": "AI 經濟作業系統",
+    "subtitle": "統一模型市場與 Agent 市場，共享金融層"
+  },
+  "nav": {
+    "platform": "平台",
+    "pricing": "定價",
+    "docs": "文件",
+    "partners": "合作夥伴",
+    "getStarted": "開始使用",
+    "dashboard": "控制台",
+    "login": "登入",
+    "logout": "登出"
+  },
+  "hero": {
+    "badgeModel": "Model Marketplace",
+    "badgeAgent": "Agent Marketplace",
+    "title1": "AI 模型與 Agent，",
+    "title2": "統一經濟系統。",
+    "subtitle": "一個平台整合模型 API 與 Agent 任務市場，共享錢包、計費、雙記帳與結算系統——AI 經濟的統一基礎設施。",
+    "placeholder": "試試：gpt-4.1 / claude-3-opus / 搜尋 Agent",
+    "run": "執行",
+    "learnMore": "了解更多"
+  },
+  "coreProducts": {
+    "title": "雙引擎架構",
+    "subtitle": "一個經濟系統，兩種交易型態，統一金融層。",
+    "modelMarket": {
+      "title": "Model Marketplace",
+      "desc": "GPT / Claude / Gemini / Mistral / Llama 聚合。統一 API 介面、Token 計費、SDK 呼叫——一次整合，無限模型。"
+    },
+    "agentMarket": {
+      "title": "Agent Marketplace",
+      "desc": "Agent 作為服務提供方，Agent 之間可以互相呼叫。自動匹配最優 Agent，執行任務並收費。"
+    },
+    "billing": {
+      "title": "統一金融層",
+      "desc": "錢包系統、定價引擎、雙記帳 Ledger、用量計量與結算。每一筆交易都有 debit 與 credit，追蹤每個 token 與任務。"
+    },
+    "distribution": {
+      "title": "分發網路",
+      "desc": "多級代理、白標 SaaS、企業計費網路。全球擴展您的 AI 業務。"
+    }
+  },
+  "agentSpark": {
+    "badge": "執行核心",
+    "title": "AgentSpark — 執行引擎",
+    "subtitle": "詞元閃耀的執行核心。負責模型路由、Agent 執行與運行時編排。",
+    "runtime": {
+      "title": "執行運行時",
+      "desc": "運行 AI 任務、工具呼叫和 Agent 工作流程。可擴展計算支援任何工作負載。"
+    },
+    "routing": {
+      "title": "路由引擎",
+      "desc": "根據成本、延遲和能力匹配將請求路由到最佳模型或 Agent。"
+    },
+    "fallback": {
+      "title": "故障轉移管理",
+      "desc": "當主路由失敗時自動切換到備用提供商。零停機時間。"
+    },
+    "monitoring": {
+      "title": "效能監控",
+      "desc": "即時延遲追蹤、錯誤率和成本優化分析。"
+    }
+  },
+  "systemFlow": {
+    "title": "系統流程",
+    "subtitle": "從請求到結算——透過詞元閃耀的完整生命週期。",
+    "steps": [
+      {
+        "title": "使用者或 Agent 發送請求",
+        "desc": "請求到達詞元閃耀統一端點，包含模型或任務偏好"
+      },
+      {
+        "title": "智慧匹配與路由",
+        "desc": "路由引擎根據成本、延遲和能力選擇最優模型或 Agent"
+      },
+      {
+        "title": "詞元閃耀計算價格",
+        "desc": "即時定價引擎根據模型、token 或任務類型計算成本"
+      },
+      {
+        "title": "錢包餘額凍結",
+        "desc": "從使用者錢包預估費用以確保交易安全"
+      },
+      {
+        "title": "執行引擎運行",
+        "desc": "請求路由到選定模型或 Agent，執行推理或任務"
+      },
+      {
+        "title": "返回結果",
+        "desc": "產生的回應透過詞元閃耀串流返回"
+      },
+      {
+        "title": "雙記帳與結算",
+        "desc": "記錄 debit/credit，計算實際用量，結算服務提供方"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "統一定價 —",
+    "titleAccent": "一個費率卡",
+    "subtitle": "所有模型和 Agent 透明定價。按 token 或任務付費，無隱藏費用。",
+    "input": "輸入",
+    "output": "輸出",
+    "context": "上下文",
+    "perMillion": "/ 1M",
+    "popular": "最受歡迎",
+    "getStarted": "開始使用",
+    "categories": {
+      "flagship": "旗艦模型",
+      "standard": "標準模型",
+      "economy": "經濟模型",
+      "open": "開源模型"
+    }
+  },
+  "distribution": {
+    "title": "Partner",
+    "titleAccent": "分銷網路",
+    "subtitle": "AI 算力與 Agent 能力的管道分銷網路。消費驅動分傭，非拉人頭。",
+    "level1": {
+      "title": "一級代理（Partner）",
+      "desc": "拉新使用者、建立子管道、API Key 分發、白標能力。發展終端使用者與二級代理。",
+      "commission": "佣金：使用者消費 10% ~ 20%"
+    },
+    "level2": {
+      "title": "二級代理（Sub Partner）",
+      "desc": "只能發展使用者，不能再分層。不能改價（或限制範圍），使用上級 API 資源池。",
+      "commission": "佣金：使用者消費 3% ~ 8%"
+    },
+    "enterprise": {
+      "title": "企業客戶",
+      "desc": "固定折扣（wholesale pricing）、API 大量採購、月結帳單。客製化合作方案。",
+      "commission": "客製化商務方案"
+    },
+    "flow": {
+      "title": "資金流",
+      "steps": [
+        "使用者充值",
+        "Ledger 凍結",
+        "自動分帳"
+      ]
+    },
+    "features": {
+      "commission": {
+        "title": "消費驅動分傭",
+        "desc": "佣金 = 真實 token 消耗 × 分傭比例。不按拉人頭，只按實際使用。"
+      },
+      "ledger": {
+        "title": "Ledger 雙記帳",
+        "desc": "所有分傭進入 Ledger，不允許手動改餘額。每筆資金可追溯。"
+      },
+      "settlement": {
+        "title": "自動結算",
+        "desc": "Stripe / 微信 / 支付寶 / USDT 自動分帳，T+0 / T+1 結算。"
+      }
+    },
+    "becomePartner": "成為合作夥伴",
+    "learnMore": "了解更多"
+  },
+  "footer": {
+    "product": "產品",
+    "company": "公司",
+    "resources": "資源",
+    "legal": "法律",
+    "api": "API",
+    "changelog": "更新日誌",
+    "about": "關於",
+    "blog": "部落格",
+    "careers": "招聘",
+    "press": "新聞",
+    "community": "社群",
+    "helpCenter": "幫助中心",
+    "status": "狀態",
+    "contact": "聯絡我們",
+    "privacy": "隱私政策",
+    "terms": "服務條款",
+    "security": "安全",
+    "cookies": "Cookies",
+    "copyright": "© 2026 詞元閃耀。保留所有權利。"
+  },
+  "wallet": {
+    "balance": "餘額",
+    "available": "可用",
+    "reserved": "已凍結",
+    "topup": "充值",
+    "transactions": "交易記錄",
+    "history": "歷史記錄"
+  },
+  "errors": {
+    "insufficientFunds": "餘額不足",
+    "rateLimitExceeded": "請求頻率超限",
+    "invalidApiKey": "API 金鑰無效",
+    "providerError": "提供商錯誤",
+    "modelNotFound": "未找到模型"
+  },
+  "language": {
+    "zh": "簡體中文",
+    "zh-TW": "繁體中文",
+    "en": "English",
+    "ja": "日本語",
+    "ko": "한국어",
+    "ru": "Русский"
+  }
+}
