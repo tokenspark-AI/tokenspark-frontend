@@ -28,3 +28,4 @@ npm-debug.log*
 # Test coverage
 coverage/
 node_modules
+backend/shared/.env.example
